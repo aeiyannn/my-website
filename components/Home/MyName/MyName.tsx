@@ -2,12 +2,13 @@ import React from "react";
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion"; // Or import { motion } from "framer-motion";
 import Link from "next/link"; // Link component is imported but not used in this snippet. Remove if not needed elsewhere.
 import { useRouter } from "next/router"; // useRouter is imported but not used. Remove if not needed.
+import { portfolioConfig } from "../../../configuration";
 
 interface MyNameProps {
   finishedLoading: boolean;
 }
 
-const MyName: React.FC<MyNameProps> = props => {
+const MyName: React.FC<MyNameProps> = (props) => {
   // const router = useRouter(); // Not used currently
 
   return (
@@ -19,8 +20,14 @@ const MyName: React.FC<MyNameProps> = props => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: { delay: props.finishedLoading ? 0 : 10.4, duration: props.finishedLoading ? 0 : 0.2 },
-          y: { delay: props.finishedLoading ? 0 : 10.4, duration: props.finishedLoading ? 0 : 0.2 },
+          opacity: {
+            delay: 0,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
+          y: {
+            delay: 0,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
         }}
         className="text-AAsecondary font-mono"
       >
@@ -30,55 +37,73 @@ const MyName: React.FC<MyNameProps> = props => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: { delay: props.finishedLoading ? 0 : 10.5, duration: props.finishedLoading ? 0 : 0.2 },
-          y: { delay: props.finishedLoading ? 0 : 10.5, duration: props.finishedLoading ? 0 : 0.2 },
+          opacity: {
+            delay: props.finishedLoading ? 0 : 10.5,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
+          y: {
+            delay: props.finishedLoading ? 0 : 10.5,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
         }}
         className="text-gray-300 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
       >
-        Anaflous Abdellatif.
+        {portfolioConfig.siteTitle}
       </motion.h1>
       <motion.h2
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: { delay: props.finishedLoading ? 0 : 10.6, duration: props.finishedLoading ? 0 : 0.2 },
-          y: { delay: props.finishedLoading ? 0 : 10.6, duration: props.finishedLoading ? 0 : 0.2 },
+          opacity: {
+            delay: 0,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
+          y: {
+            delay: 0,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
         }}
         className="text-gray-400 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4"
       >
-        I turn ideas into reality.
+        {portfolioConfig.tagline}
       </motion.h2>
 
       <motion.h3
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: { delay: props.finishedLoading ? 0 : 10.7, duration: props.finishedLoading ? 0 : 0.2 },
-          y: { delay: props.finishedLoading ? 0 : 10.7, duration: props.finishedLoading ? 0 : 0.2 },
+          opacity: {
+            delay: 0,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
+          y: {
+            delay: 0,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
         }}
         className="text-gray-400 font-Header text-sm md:text-lg sm:text-md mt-10 tracking-wider"
       >
-        I&apos;m a <span className="text-AAsecondary keyword-hover">Lead Full Stack Software Engineer</span> with strong{" "}
-        <span className="text-AAsecondary keyword-hover">problem-solving skills</span>, specializing in creating
-        exceptional digital experiences.
-        <br className="3xl:block hidden" /> With expertise in both{" "}
-        <span className="text-AAsecondary keyword-hover">front-end</span> and{" "}
-        <span className="text-AAsecondary keyword-hover">back-end development</span>, I work with a diverse range of
-        technologies, including <span className="text-AAsecondary keyword-hover">web3</span>
-        <br className="3xl:block hidden" /> and traditional web applications. I enjoy solving challenging projects that
-        drive <span className="text-AAsecondary keyword-hover">innovation</span> and deliver high-quality results.
-        <br className="3xl:block hidden" /> My experience in{" "}
-        <span className="text-AAsecondary keyword-hover">leading development teams</span> has honed my ability to
-        collaborate effectively and translate ideas into functional solutions.
-        <br className="3xl:block hidden" /> I actively seek dynamic projects where I can contribute to pushing the
-        boundaries of technology and drive impactful <span className="text-AAsecondary keyword-hover">innovation</span>.
+        {portfolioConfig.heroDescription.map((part, index) => (
+          <span
+            key={index}
+            className={part.highlight ? "text-AAsecondary keyword-hover" : ""}
+          >
+            {part.text}
+          </span>
+        ))}
       </motion.h3>
       <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
-          opacity: { delay: props.finishedLoading ? 0 : 10.8, duration: props.finishedLoading ? 0 : 0.2 },
-          y: { delay: props.finishedLoading ? 0 : 10.8, duration: props.finishedLoading ? 0 : 0.2 },
+          opacity: {
+            delay: 0,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
+          y: {
+            delay: 0,
+            duration: props.finishedLoading ? 0 : 0.2,
+          },
         }}
         className="mt-12"
       >

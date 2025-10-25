@@ -22,6 +22,10 @@ const Startup = (props) => {
   <motion.div 
     initial={{opacity:1}}
     animate={{opacity:0}}
+    onAnimationComplete={()=>{
+      props.onFinish();
+    }
+    }
     transition={{opacity:{delay:4.9,duration:0}}}
     className="absolute h-full w-full flex justify-center items-center bg-StartupBackground">
       <motion.div

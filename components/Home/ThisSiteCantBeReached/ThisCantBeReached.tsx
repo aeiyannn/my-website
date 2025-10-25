@@ -5,9 +5,8 @@ export default function ThisCantBeReached() {
   let CenterWidth = 0;
   let CenterHeight = 0;
   React.useEffect(() => {
-    setTimeout(function () {
-      setShowText(true);
-    }, 1000);
+    // show text immediately (remove artificial delay)
+    setShowText(true);
   }, []);
   if (typeof window !== "undefined") {
     if(window.innerHeight>640){
@@ -33,7 +32,7 @@ export default function ThisCantBeReached() {
     <motion.div
       initial={{ opacity: 1 }}
       animate={{opacity:0}}
-      transition={{ delay:4,duration: 0.5 }}
+      transition={{ delay:0,duration: 0.5 }}
       className="absolute h-screen w-full bg-white 
       py-16 sm:py-40 
       px-4 sm:px-24 md:px-36 lg:px-48 xl:px-96 
@@ -43,9 +42,9 @@ export default function ThisCantBeReached() {
       <div className="relative w-full  flex flex-col space-y-4">
         {/* Icon for Desktop and Table */}
         
-        <motion.div 
-        animate={{y:CenterHeight,x:CenterWidth,scale:2}}
-        transition={{delay:2,duration:1}}
+  <motion.div 
+  animate={{y:CenterHeight,x:CenterWidth,scale:2}}
+  transition={{delay:0,duration:1}}
         className="relative w-9 h-10 ">
           <div className="absolute h-1 w-1/2 bg-gray-600"></div>
           <div className="absolute h-full w-1 bg-gray-600"></div>
@@ -74,7 +73,7 @@ export default function ThisCantBeReached() {
                 "100%",
               ],
             }}
-            transition={{ scaleY: { delay: 1.5, duration: 1 } }}
+            transition={{ scaleY: { delay: 0, duration: 1 } }}
             className="absolute left-2 top-3 h-1.5 w-[3.5px] bg-gray-600"
           ></motion.div>
 
@@ -102,8 +101,8 @@ export default function ThisCantBeReached() {
               ],
             }}
             transition={{
-              opacity: { delay: 1, duration: 0 },
-              scaleY: { delay: 1.5, duration: 1 },
+              opacity: { delay: 0, duration: 0 },
+              scaleY: { delay: 0, duration: 1 },
             }}
             className="absolute right-2 top-3 h-1.5 w-[3.5px] bg-gray-600"
           ></motion.div>
@@ -113,25 +112,25 @@ export default function ThisCantBeReached() {
           <motion.div
             animate={{ rotate: -90, x: 9, y: -7 }}
             transition={{
-              rotate: { delay: 0.5, duration: 0.5 },
-              x: { delay: 0.5, duration: 0.5 },
-              y: { delay: 0.5, duration: 0.5 },
+              rotate: { delay: 0, duration: 0.5 },
+              x: { delay: 0, duration: 0.5 },
+              y: { delay: 0, duration: 0.5 },
             }}
             className="absolute right-4 top-0 h-[18px] w-1 bg-gray-600"
           ></motion.div>
           <motion.div
             animate={{ rotate: 90, x: 6, y: -7 }}
             transition={{
-              rotate: { delay: 0.5, duration: 0.5 },
-              x: { delay: 0.5, duration: 0.5 },
-              y: { delay: 0.5, duration: 0.5 },
+              rotate: { delay: 0, duration: 0.5 },
+              x: { delay: 0, duration: 0.5 },
+              y: { delay: 0, duration: 0.5 },
             }}
             className="absolute right-0 top-[14px] h-1 w-4 bg-gray-600"
           ></motion.div>
           <motion.div
             initial={{ opacity: "100%" }}
             animate={{ opacity: "0%" }}
-            transition={{ opacity: { delay: 0.5, duration: 0 } }}
+            transition={{ opacity: { delay: 0, duration: 0 } }}
             className=""
           >
             <div className="absolute right-3 top-0 h-1 w-1 bg-gray-600"></div>
@@ -145,14 +144,14 @@ export default function ThisCantBeReached() {
           <div className="absolute left-3 bottom-[10px] w-3 h-[3px] bg-gray-600"></div>
           <motion.div
             animate={{ y: [0, -5, 0, -5, 0, -5,  ] }}
-            transition={{ y: { delay: 3, duration: 0.5 } }}
+            transition={{ y: { delay: 0, duration: 0.5 } }}
             className="absolute left-[9px] bottom-[7px] w-[3px] h-[3px] bg-gray-600"
           ></motion.div>
           <motion.div
             animate={{
               y: [0, -5, 0, -5, 0, -5, 0, -5, ],
             }}
-            transition={{ y: { delay: 3, duration: 0.5 } }}
+            transition={{ y: { delay: 0, duration: 0.5 } }}
             className="absolute right-[9px] bottom-[7px] w-[3px] h-[3px] bg-gray-600"
           ></motion.div>
         {/* ! Hello animation text */}
@@ -160,7 +159,7 @@ export default function ThisCantBeReached() {
             <motion.span
             initial={{y:CenterHeight+50-20,x:CenterWidth-13,opacity:0}}
             animate={{y:CenterHeight+50,opacity:1}}
-            transition={{delay:3.5,duration:0.3}}
+            transition={{delay:0,duration:0.3}}
             className="absolute font-bold text-gray-600 text-2xl">
               Hello!
             </motion.span>
@@ -169,10 +168,10 @@ export default function ThisCantBeReached() {
         
         {/* Text start from here */}
 
-        <motion.div
+          <motion.div
           initial={{opacity:1}}
           animate={{ opacity: 0 }}
-          transition={{ opacity: { delay: 2, duration: 0.5 } }}
+          transition={{ opacity: { delay: 0, duration: 0.5 } }}
           className="w-full  flex flex-col space-y-8"
         >
           <span className="text-gray-600 font-Header text-2xl">
@@ -180,7 +179,7 @@ export default function ThisCantBeReached() {
             {ShowText ? (
               <motion.span
                 animate={{ scale: ["100%", "120%"] }}
-                transition={{ scale: { delay: 4, duration: 0.5 } }}
+                transition={{ scale: { delay: 0, duration: 0.5 } }}
                 className="font-bold"
               >
                 actually can
@@ -196,7 +195,7 @@ export default function ThisCantBeReached() {
             {ShowText ? (
               <motion.span
                 animate={{ scale: ["100%", "140%"] }}
-                transition={{ scale: { delay: 4, duration: 1 } }}
+                transition={{ scale: { delay: 0, duration: 1 } }}
                 className="font-bold"
               >
                 opened
@@ -227,7 +226,7 @@ export default function ThisCantBeReached() {
             {ShowText ? (
               <motion.span
                 animate={{ scale: ["100%", "120%"] }}
-                transition={{ scale: { delay: 4, duration: 0.5 } }}
+                transition={{ scale: { delay: 0, duration: 0.5 } }}
                 className="font-bold"
               >
                 SUCC_CONNECTION_OPENED
@@ -241,7 +240,7 @@ export default function ThisCantBeReached() {
       <motion.div
         initial={{opacity:1}}
         animate={{ opacity: 0 }}
-        transition={{ opacity: { delay: 2, duration: 0.5 } }}
+        transition={{ opacity: { delay: 0, duration: 0.5 } }}
         className=""
       >
         <button className="px-4 py-2 bg-blue-500 rounded text-white sm:text-base text-sm">

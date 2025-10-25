@@ -9,7 +9,7 @@ export default function Logo(props: { finishedLoading: boolean }) {
         transition={{
           type: "spring",
           y: { delay: props.finishedLoading ? 0 : 8, duration: 0 },
-          opacity: { delay: props.finishedLoading ? 0 : 8, duration: 0 },
+          opacity: { delay: 0, duration: 0 },
         }}
         className=" relative h-12 w-10 "
       >

@@ -56,9 +56,8 @@ const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
   
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowElement(true);
-    }, 10400);
+    // show header immediately (remove artificial delay)
+    setShowElement(true);
   }, []);
 
   console.log("rotate from header : ", rotate);
@@ -76,8 +75,8 @@ const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
         ref={RefNavBar}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        // changed from 10.4 to 1
-        transition={{ opacity: { delay: props.finishedLoading ? 0 : 9.4, duration: 0 } }}
+  // remove animation delay so header shows immediately
+  transition={{ opacity: { delay: 0, duration: 0 } }}
         className={`w-full fixed ${ShowElement ? `bg-opacity-70 shadow-xl` : `bg-opacity-0 `} bg-AAprimary flex 
       justify-between px-6 sm:px-12 py-2 sm:py-4  transition duration-4000 translate-y-0 z-20`}
       >
