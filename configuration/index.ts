@@ -136,59 +136,58 @@ export const portfolioConfig = {
             ],
         }
     ],
-    projectsData: [
-        {
-            title: "Elysium Dental & Aesthetics Clinic",
-            projectType: "edac.com.pk",
-            link: "https://edac.com.pk/",
-            image: "/project-1.png",
-            background: "/ensvision.jpg",
-            description:
-                "A simple and elegant website for a dental clinic, designed to be user-friendly and informative. The site is fully responsive and optimized for performance, ensuring a seamless experience for patients seeking information or appointments.",
-            tech: ["Next.js", "Tailwind CSS", "Responsive Design", "Vercel"],
-            github: null, // No public GitHub link for this project
-        },
-        {
-            title: "YPredict - v1",
-            projectType: "Recent Project",
-            link: "https://ubiquitous-bublanina-da84ec.netlify.app/",
-            image: "/img/YPredict-v1.jpg",
-            background: "/project-2.png",
-            description: "I led the development of a token project aimed at creating a decentralized ecosystem. My role involved overseeing the project's planning and development, including the design and implementation of the smart contract and blockchain technology for a private sale.",
-            tech: ["Token", "ERC20", "Next.js", "Smart contract", "Blockchain"],
-            github: "https://github.com/hktitof/Ypredict",
-        },
-        {
-            title: "FeverTokens",
-            projectType: "Recent Project",
-            link: "https://www.fevertokens.io/",
-            image: "/img/feverTokens.png",
-            background: "/feverTokens.jpg",
-            description: "I played a key role in developing an NFT marketplace project, focused on creating a decentralized platform with scalable smart contracts and blockchain technology. This platform, FeverTokens - v2, was showcased at the VivaTech2022 event in Paris, providing builders with tools to develop scalable Web3 applications.",
-            tech: ["Tokenization", "ERC721", "Solidity", "Smart Contracts", "Blockchain"],
-            github: null,
-        },
-        {
-            title: "Speed Typing",
-            projectType: "Recent Project",
-            link: "/typing",
-            image: "/typing.png",
-            background: "/typing.png",
-            description: "This project helps you improve your typing by tracking your progress in each round and giving you a score based on your speed and accuracy through a table of statistics.",
-            tech: ["Algorithms", "Framer Motion", "Tailwind CSS", "TypeScript"],
-            github: "https://github.com/hktitof/Typing",
-        },
-        {
-            title: "User Data Puller",
-            projectType: "Recent Project",
-            link: "/userdatapuller",
-            image: "/hackme.jpg",
-            background: "/hackme.jpg",
-            description: "This project shows how easily your browser can be identified and tracked. It reveals your location, IP Address, and details about your software and hardware using cookies.",
-            tech: ["Cookies", "Google API", "Data collecting", "IP Address", "Location"],
-            github: "https://github.com/hktitof/DataPuller",
-        },
-        // Add more projects here following the same object structure
-    ]
+ projectsData: [
+    {
+        title: "Elysium Dental & Aesthetics Clinic",
+        projectType: "edac.com.pk",
+        link: "https://edac.com.pk/",
+        image: "/project-1.png",
+        background: "/ensvision.jpg",
+        description:
+            "A simple and elegant website for a dental clinic, designed to be user-friendly and informative. The site is fully responsive and optimized for performance, ensuring a seamless experience for patients seeking information or appointments.",
+        tech: ["Next.js", "Tailwind CSS", "Responsive Design", "Vercel"],
+        github: null,
+    },
+    {
+        title: "Sehat Kahani",
+        projectType: "Office Project",
+        link: "https://sehatkahani.com",
+        image: "/sehatkahani.png",
+        background: "/sehatkahani-bg.jpg",
+        description: "A telemedicine platform where patients can connect with doctors online. I contributed to the admin panels, backend APIs, and website versions for doctors and patients with features like teleconsultation, e-pharmacy, labs, and claim management.",
+        tech: ["Angular", "Node.js", "Responsive Design", "Web App"],
+        github: null,
+    },
+    {
+        title: "Neem.io",
+        projectType: "Office Project",
+        link: "https://neem.io",
+        image: "/neem.png",
+        background: "/neem-bg.jpg",
+        description: "A fintech platform where I worked on frontend development for the admin and merchant dashboards, supporting online payments and transaction management.",
+        tech: ["Next.js", "Node.js", "Responsive Design", "Web App"],
+        github: null,
+    },
+    {
+        title: "BC Appa",
+        projectType: "Office Project",
+        link: "https://bcappa.com",
+        image: "/bcappa.png",
+        background: "/bcapp-bg.jpg",
+        description: "An online committee management application. I developed the frontend admin dashboards and interfaces for managing committees efficiently.",
+        tech: ["Next.js", "Node.js", "Responsive Design", "Web App"],
+        github: null,
+    },
+    {
+        title: "Umah Shanti Villa",
+        projectType: "Freelance Project",
+        link: "#", // Replace with actual link if available
+        image: "/umahshanti.png",
+        background: "/umahshanti-bg.jpg",
+        description: "An online booking platform for a luxury villa with date-specific reservations, payment gateway integration, and a responsive, visually appealing website.",
+        tech: ["Next.js", "Node.js", "Responsive Design", "Web App"],
+        github: null,
+    },
+]
 
 };
