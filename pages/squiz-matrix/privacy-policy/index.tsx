@@ -166,8 +166,8 @@ const PrivacyPolicyPage = () => {
                 <p className="text-gray-900 font-medium">Abdellatif Anaflous - Developper</p>
                 <div className="flex space-x-2">
                   <p className="text-gray-600">Email:</p>
-                  <a href="mailto:abdellatif@anaflous.com" className="text-blue-600 hover:text-blue-800 underline">
-                    abdellatif@anaflous.com
+                  <a href="mailto:aeiyankhan2@gmail.com" className="text-blue-600 hover:text-blue-800 underline">
+                    aeiyankhan2@gmail.com
                   </a>
                 </div>
               </div>
