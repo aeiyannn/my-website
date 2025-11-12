@@ -181,7 +181,7 @@ export const portfolioConfig = {
     {
         title: "Umah Shanti Villa",
         projectType: "Freelance Project",
-        link: "#", // Replace with actual link if available
+        link: "https://vus-fe-zeta.vercel.app/", // Replace with actual link if available
         image: "/umahshanti.png",
         background: "/umahshanti-bg.jpg",
         description: "An online booking platform for a luxury villa with date-specific reservations, payment gateway integration, and a responsive, visually appealing website.",
