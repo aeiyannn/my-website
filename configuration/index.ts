@@ -104,6 +104,46 @@ export const portfolioConfig = {
             ],
         },
         {
+    id: "smarix",
+    companyName: "Smarix",
+    position: "Senior MERN Stack Engineer / Project Lead",
+    from: "January 2025",
+    to: "Present",
+    website: "https://smarix.com/",
+    barPosition: -10,
+    barAbovePosition: 100,
+    tasks: [
+        {
+            text: "Leading end-to-end MERN stack projects, owning system architecture, technical decisions, and delivery timelines.",
+            keywords: ["Project Leadership", "System Architecture", "MERN Stack"],
+        },
+        {
+            text: "Designed and implemented scalable backend systems using Node.js, Express, and MongoDB with performance-focused query optimization.",
+            keywords: ["Node.js", "Express", "MongoDB", "Scalability"],
+        },
+        {
+            text: "Built advanced admin panels and dashboards with reusable React components, server-side pagination, and role-based access control.",
+            keywords: ["React", "Admin Dashboard", "RBAC", "Pagination"],
+        },
+        {
+            text: "Integrated Firebase for authentication, real-time updates, and query-parameter–driven data fetching without page-level side effects.",
+            keywords: ["Firebase", "Authentication", "Real-time Data"],
+        },
+        {
+            text: "Led and mentored junior developers through code reviews, architectural guidance, and best practices enforcement.",
+            keywords: ["Mentorship", "Code Review", "Team Leadership"],
+        },
+        {
+            text: "Ensured application security using JWT-based authentication, protected APIs, and audit-friendly backend flows.",
+            keywords: ["JWT", "API Security", "Authentication"],
+        },
+        {
+            text: "Collaborated closely with product managers and designers to translate business requirements into technical solutions.",
+            keywords: ["Product Collaboration", "Agile", "Business Logic"],
+        }
+    ],
+},
+        {
             id: "smit",
             companyName: "Saylani Mass IT Training (SMIT)",
             position: "Web & Mobile App Instructor",
