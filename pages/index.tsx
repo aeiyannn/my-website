@@ -60,15 +60,15 @@ export default function Home() {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta property="og:url" content={`https://anaflous.com`} />
-        <link rel="canonical" href={`https://anaflous.com`} />
+        <meta property="og:url" content={`https://aeiyankhan.vercel.app`} />
+        <link rel="canonical" href={`https://aeiyankhan.vercel.app`} />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Manu Arora" />
+        <meta property="og:site_name" content="Aeiyan Khan" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@titofabdo" />
+        <meta name="twitter:site" content="@aeiyankhan" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
@@ -91,7 +91,7 @@ export default function Home() {
           {context.sharedState.finishedLoading ? <SomethingIveBuilt /> : <></>}
           {context.sharedState.finishedLoading ? <GetInTouch /> : <></>}
           {context.sharedState.finishedLoading ? (
-            <Footer githubUrl={"https://github.com/hktitof/my-website"} hideSocialsInDesktop={true} />
+            <Footer githubUrl={"https://github.com/aeiyannn/my-website"} hideSocialsInDesktop={true} />
           ) : (
             <></>
           )}
