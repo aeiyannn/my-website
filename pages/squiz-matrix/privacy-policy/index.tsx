@@ -163,7 +163,7 @@ const PrivacyPolicyPage = () => {
                 contact:
               </p>
               <div className="mt-4 bg-gray-50 rounded-lg p-6">
-                <p className="text-gray-900 font-medium">Abdellatif Anaflous - Developper</p>
+                <p className="text-gray-900 font-medium">Aeiyan Khan - Developer</p>
                 <div className="flex space-x-2">
                   <p className="text-gray-600">Email:</p>
                   <a href="mailto:aeiyankhan2@gmail.com" className="text-blue-600 hover:text-blue-800 underline">

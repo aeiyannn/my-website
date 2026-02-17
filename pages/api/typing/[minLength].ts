@@ -59,7 +59,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const response = await fetch(apiUrl.toString(), {
       signal: controller.signal,
       headers: {
-        "User-Agent": "YourApp/1.0 (+https://anaflous.com)",
+        "User-Agent": "YourApp/1.0 (+https://aeiyankhan.vercel.app)",
         Accept: "application/json",
       },
     });
@@ -87,7 +87,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.setHeader("Content-Security-Policy", "default-src 'self'");
     res.setHeader("X-Content-Type-Options", "nosniff");
     res.setHeader("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload");
-    res.setHeader("Access-Control-Allow-Origin", "https://anaflous.com");
+    res.setHeader("Access-Control-Allow-Origin", "https://aeiyankhan.vercel.app");
     res.setHeader("Access-Control-Allow-Methods", "GET");
 
     return res.status(200).json(cleanData);
