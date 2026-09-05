@@ -8,7 +8,8 @@ const navItems = [
   { label: "Experience", target: "experience", num: "03" },
   { label: "Toolkit", target: "toolkit", num: "04" },
   { label: "About", target: "about", num: "05" },
-  { label: "Contact", target: "contact", num: "06" },
+  { label: "Reviews", target: "recommendations", num: "06" },
+  { label: "Contact", target: "contact", num: "07" },
 ];
 
 export default function MobileMenu(props: {

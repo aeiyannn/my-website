@@ -78,7 +78,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
         {/* Navigation Bar */}
         <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-surface-border px-6 sm:px-12 py-4 flex items-center justify-between">
           <Link href="/#work">
-            <span className="font-mono text-xs text-accent hover:underline flex items-center gap-1.5 cursor-pointer">
+            <span className="font-mono text-xs text-accent hover:opacity-80 transition-opacity flex items-center gap-1.5 cursor-pointer">
               ← Back to Selected Work
             </span>
           </Link>
@@ -88,14 +88,14 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
                 href={study.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="font-mono text-xs text-text-primary hover:text-accent border border-surface-border px-3 py-1 rounded"
+                className="font-mono text-xs text-text-primary hover:text-accent border border-surface-border px-3 py-1 rounded transition-colors"
               >
                 Live Deployment ↗
               </a>
             )}
             <a
               href="mailto:aeiyankhan2@gmail.com"
-              className="font-mono text-xs text-background bg-accent px-3 py-1 rounded font-medium"
+              className="font-mono text-xs text-background bg-accent px-3 py-1 rounded font-medium hover:bg-coral-active transition-colors"
             >
               Discuss Project
             </a>
@@ -152,7 +152,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
                 <p className="text-text-primary font-medium mt-0.5">{study.outcome}</p>
               </div>
               <div>
-                <span className="font-mono text-xs text-accent-alt uppercase tracking-wider block">What I Owned:</span>
+                <span className="font-mono text-xs text-text-secondary uppercase tracking-wider block">What I Owned:</span>
                 <p className="text-text-secondary mt-0.5">{study.ownership}</p>
               </div>
               <div>
@@ -186,7 +186,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
               </div>
 
               <div className="p-3 rounded bg-surface border border-surface-border text-xs">
-                <span className="text-warning font-mono font-bold block mb-0.5">Explicitly Out of Scope:</span>
+                <span className="text-text-primary font-mono font-semibold block mb-0.5">Explicitly Out of Scope:</span>
                 <span className="text-text-secondary">{study.problem.outOfScope}</span>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
                     <h3 className="text-sm font-bold text-text-primary">{layer.name}</h3>
                     <p className="text-xs text-text-secondary font-body mt-0.5">{layer.role}</p>
                   </div>
-                  <span className="font-mono text-xs text-accent-alt bg-background px-3 py-1 rounded border border-surface-border whitespace-nowrap self-start sm:self-center">
+                  <span className="font-mono text-xs text-text-primary bg-background px-3 py-1 rounded border border-surface-border whitespace-nowrap self-start sm:self-center">
                     {layer.tech}
                   </span>
                 </div>
@@ -292,11 +292,15 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
                 <tbody className="divide-y divide-surface-border">
                   {study.decisions.map((d, i) => (
                     <tr key={i} className="hover:bg-background/40 transition-colors">
-                      <td className="p-3.5 font-bold text-text-primary">{d.decision}</td>
+                      <td className="p-3.5 font-semibold text-text-primary">{d.decision}</td>
                       <td className="p-3.5 text-text-secondary">{d.alternatives}</td>
-                      <td className="p-3.5 text-accent">{d.whyChosen}</td>
-                      <td className="p-3.5 text-warning">{d.costOrRisk}</td>
-                      <td className="p-3.5 font-mono text-accent-alt">{d.qualityAttribute}</td>
+                      <td className="p-3.5 text-text-primary font-medium">{d.whyChosen}</td>
+                      <td className="p-3.5 text-text-secondary">{d.costOrRisk}</td>
+                      <td className="p-3.5">
+                        <span className="font-mono text-[11px] text-text-primary bg-background px-2.5 py-1 rounded border border-surface-border inline-block whitespace-nowrap">
+                          {d.qualityAttribute}
+                        </span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -327,13 +331,13 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
               </div>
 
               <div className="p-5 rounded-xl bg-surface border border-surface-border">
-                <span className="font-mono text-xs text-accent-alt uppercase tracking-wider block mb-2">
+                <span className="font-mono text-xs text-text-secondary uppercase tracking-wider block mb-2">
                   What I Would Improve Next
                 </span>
                 <ul className="space-y-2 text-xs font-body text-text-secondary">
                   {study.validation.whatToImproveNext.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-accent-alt font-mono">→</span>
+                      <span className="text-text-secondary font-mono">→</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -342,8 +346,27 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
             </div>
           </section>
 
+          {/* Cross-case study navigation */}
+          <div className="p-6 rounded-xl bg-surface border border-surface-border mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <span className="font-mono text-[11px] text-accent uppercase tracking-wider block">
+                Technical Case Study {study.slug === "sentinelkids" ? "1 of 2" : "2 of 2"}
+              </span>
+              <h3 className="text-base font-bold text-text-primary mt-0.5">
+                {study.slug === "sentinelkids"
+                  ? "Explore Case Study 02: Sehat Kahani"
+                  : "Explore Case Study 01: SentinelKids"}
+              </h3>
+            </div>
+            <Link href={study.slug === "sentinelkids" ? "/work/sehat-kahani" : "/work/sentinelkids"}>
+              <span className="font-mono text-xs text-text-primary hover:text-accent border border-surface-border bg-background px-4 py-2 rounded transition-colors cursor-pointer inline-flex items-center gap-1.5 whitespace-nowrap">
+                {study.slug === "sentinelkids" ? "Read Sehat Kahani Architecture →" : "Read SentinelKids Architecture →"}
+              </span>
+            </Link>
+          </div>
+
           {/* 8. End-of-Study Contact CTA */}
-          <section className="p-8 rounded-xl bg-surface border border-accent/40 text-center space-y-4">
+          <section className="p-8 rounded-xl bg-surface border border-surface-border text-center space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold text-text-primary">
               Interested in how this project approach can help your product?
             </h2>
@@ -353,13 +376,13 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <a
                 href={`mailto:aeiyankhan2@gmail.com?subject=Inquiry%20regarding%20${encodeURIComponent(study.title)}`}
-                className="font-mono text-xs text-background bg-accent px-6 py-2.5 rounded font-bold hover:bg-accent/90 transition-colors"
+                className="font-mono text-xs text-background bg-accent px-6 py-2.5 rounded font-bold hover:bg-coral-active transition-colors"
               >
                 Discuss this case study
               </a>
               <Link href="/#work">
                 <span className="font-mono text-xs text-text-secondary hover:text-text-primary border border-surface-border px-4 py-2.5 rounded cursor-pointer">
-                  Explore other projects
+                  Back to All Selected Work
                 </span>
               </Link>
             </div>

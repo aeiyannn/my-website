@@ -91,7 +91,7 @@ export default function WhereIHaveWorked() {
                       href={item.website}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:underline focus:outline-none focus:ring-1 focus:ring-accent rounded"
+                      className="hover:opacity-80 transition-opacity focus:outline-none focus:ring-1 focus:ring-accent rounded"
                     >
                       {item.company}
                     </a>
@@ -107,13 +107,13 @@ export default function WhereIHaveWorked() {
             <div className="p-5 sm:p-6 rounded-xl bg-surface border border-surface-border hover:border-accent/40 transition-colors">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-body mb-4">
                 <div>
-                  <span className="font-mono text-[11px] text-accent uppercase tracking-wider block mb-1">
+                  <span className="font-mono text-[11px] text-text-secondary uppercase tracking-wider block mb-1">
                     Scope of Work
                   </span>
                   <p className="text-text-secondary leading-relaxed">{item.scope}</p>
                 </div>
                 <div>
-                  <span className="font-mono text-[11px] text-accent-alt uppercase tracking-wider block mb-1">
+                  <span className="font-mono text-[11px] text-text-secondary uppercase tracking-wider block mb-1">
                     Technical Ownership
                   </span>
                   <p className="text-text-secondary leading-relaxed">{item.ownership}</p>
@@ -125,7 +125,7 @@ export default function WhereIHaveWorked() {
                   <p className="text-text-secondary leading-relaxed">{item.collaboration}</p>
                 </div>
                 <div>
-                  <span className="font-mono text-[11px] text-warning uppercase tracking-wider block mb-1">
+                  <span className="font-mono text-[11px] text-accent uppercase tracking-wider block mb-1">
                     Verified Outcome
                   </span>
                   <p className="text-text-primary font-medium leading-relaxed">{item.outcome}</p>

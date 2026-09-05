@@ -85,7 +85,7 @@ export default function MyName({ finishedLoading = true }: { finishedLoading?: b
             href="/resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs text-muted hover:text-accent transition-colors underline underline-offset-4 py-2"
+            className="font-mono text-xs text-muted hover:text-accent transition-colors py-2"
           >
             Download résumé ↓
           </a>

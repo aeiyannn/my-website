@@ -82,7 +82,7 @@ export default function ArchitecturePractice() {
                 <span className="text-text-secondary">Sync (HTTP/WSS)</span>
               </div>
               <div className="flex items-center space-x-1.5">
-                <span className="w-3 h-0.5 border-t border-dashed border-accent-alt" />
+                <span className="w-3 h-0.5 border-t border-dashed border-text-secondary" />
                 <span className="text-text-secondary">Async (Queues)</span>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function ArchitecturePractice() {
             {/* Node 1: Presentation Layer */}
             <div className="p-4 rounded-lg bg-background border border-surface-border">
               <div className="flex justify-between items-center mb-1">
-                <span className="text-[10px] text-accent uppercase">Tier 01 · Presentation</span>
+                <span className="text-[10px] text-accent uppercase font-medium">Tier 01 · Presentation</span>
                 <span className="text-[10px] text-text-secondary bg-surface px-2 py-0.5 rounded border border-surface-border">Vercel Edge</span>
               </div>
               <h4 className="font-bold text-text-primary text-sm font-sans">
@@ -110,10 +110,10 @@ export default function ArchitecturePractice() {
             </div>
 
             {/* Node 2: Gateway & Core Services */}
-            <div className="p-4 rounded-lg bg-background border border-accent/40 shadow-sm shadow-accent/5">
+            <div className="p-4 rounded-lg bg-background border border-surface-border">
               <div className="flex justify-between items-center mb-1">
-                <span className="text-[10px] text-accent uppercase">Tier 02 · Gateway &amp; Business Core</span>
-                <span className="text-[10px] text-accent bg-surface px-2 py-0.5 rounded border border-accent/30">Node.js / Express</span>
+                <span className="text-[10px] text-accent uppercase font-medium">Tier 02 · Gateway &amp; Business Core</span>
+                <span className="text-[10px] text-text-secondary bg-surface px-2 py-0.5 rounded border border-surface-border">Node.js / Express</span>
               </div>
               <h4 className="font-bold text-text-primary text-sm font-sans">
                 API Gateway · Route Guards · DTO Validation · RBAC
@@ -126,7 +126,7 @@ export default function ArchitecturePractice() {
             {/* Branching Grid: Auth & Async */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
               <div className="p-3 rounded bg-background border border-surface-border">
-                <span className="text-[10px] text-accent uppercase block">Security Plane</span>
+                <span className="text-[10px] text-text-secondary uppercase block font-medium">Security Plane</span>
                 <span className="font-bold text-text-primary text-xs font-sans block mt-0.5">JWT &amp; RBAC Lifecycle</span>
                 <span className="text-[11px] text-text-secondary font-sans block mt-1">
                   Stateless verification, rotation guards, multi-tenant isolation.
@@ -134,7 +134,7 @@ export default function ArchitecturePractice() {
               </div>
 
               <div className="p-3 rounded bg-background border border-surface-border">
-                <span className="text-[10px] text-accent-alt uppercase block">Async Pipeline (Queues)</span>
+                <span className="text-[10px] text-text-secondary uppercase block font-medium">Async Pipeline (Queues)</span>
                 <span className="font-bold text-text-primary text-xs font-sans block mt-0.5">Webhook &amp; Event Handlers</span>
                 <span className="text-[11px] text-text-secondary font-sans block mt-1">
                   E-pharmacy callbacks, payment intents, email dispatch.
@@ -150,7 +150,7 @@ export default function ArchitecturePractice() {
             {/* Node 3: Persistence & Telemetry */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-3 rounded bg-background border border-surface-border">
-                <span className="text-[10px] text-warning uppercase block">Tier 03 · Persistence</span>
+                <span className="text-[10px] text-text-secondary uppercase block font-medium">Tier 03 · Persistence</span>
                 <span className="font-bold text-text-primary text-xs font-sans block mt-0.5">MongoDB &amp; PostgreSQL</span>
                 <span className="text-[11px] text-text-secondary font-sans block mt-1">
                   Compound indexes, cursor pagination, audit ledgers.
@@ -158,7 +158,7 @@ export default function ArchitecturePractice() {
               </div>
 
               <div className="p-3 rounded bg-background border border-surface-border">
-                <span className="text-[10px] text-accent-alt uppercase block">Tier 04 · Observability</span>
+                <span className="text-[10px] text-text-secondary uppercase block font-medium">Tier 04 · Observability</span>
                 <span className="font-bold text-text-primary text-xs font-sans block mt-0.5">Structured Telemetry</span>
                 <span className="text-[11px] text-text-secondary font-sans block mt-1">
                   Request correlation IDs, error categorization, health probes.

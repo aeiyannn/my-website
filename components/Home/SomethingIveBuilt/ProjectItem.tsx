@@ -69,32 +69,32 @@ export default function ProjectItem({
           <div className="space-y-1.5 text-xs font-mono">
             {project.stackGroups.frontend && (
               <div className="flex items-start gap-2">
-                <span className="text-accent text-[11px] min-w-[65px]">Frontend:</span>
-                <span className="text-text-secondary">{project.stackGroups.frontend}</span>
+                <span className="text-text-secondary text-[11px] min-w-[70px]">Frontend:</span>
+                <span className="text-text-primary">{project.stackGroups.frontend}</span>
               </div>
             )}
             {project.stackGroups.backend && (
               <div className="flex items-start gap-2">
-                <span className="text-accent-alt text-[11px] min-w-[65px]">Backend:</span>
-                <span className="text-text-secondary">{project.stackGroups.backend}</span>
+                <span className="text-text-secondary text-[11px] min-w-[70px]">Backend:</span>
+                <span className="text-text-primary">{project.stackGroups.backend}</span>
               </div>
             )}
             {project.stackGroups.data && (
               <div className="flex items-start gap-2">
-                <span className="text-warning text-[11px] min-w-[65px]">Data:</span>
-                <span className="text-text-secondary">{project.stackGroups.data}</span>
+                <span className="text-text-secondary text-[11px] min-w-[70px]">Data:</span>
+                <span className="text-text-primary">{project.stackGroups.data}</span>
               </div>
             )}
             {project.stackGroups.integrations && (
               <div className="flex items-start gap-2">
-                <span className="text-purple-300 text-[11px] min-w-[65px]">Bridge:</span>
-                <span className="text-text-secondary">{project.stackGroups.integrations}</span>
+                <span className="text-text-secondary text-[11px] min-w-[70px]">Bridge:</span>
+                <span className="text-text-primary">{project.stackGroups.integrations}</span>
               </div>
             )}
             {project.stackGroups.deployment && (
               <div className="flex items-start gap-2">
-                <span className="text-text-secondary text-[11px] min-w-[65px]">Deploy:</span>
-                <span className="text-text-secondary">{project.stackGroups.deployment}</span>
+                <span className="text-text-secondary text-[11px] min-w-[70px]">Deploy:</span>
+                <span className="text-text-primary">{project.stackGroups.deployment}</span>
               </div>
             )}
           </div>

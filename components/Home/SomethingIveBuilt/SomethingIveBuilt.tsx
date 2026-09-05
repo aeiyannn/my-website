@@ -148,7 +148,7 @@ export default function SomethingIveBuilt() {
 
                 <div className="mt-4 pt-3 border-t border-surface-border flex items-center justify-between text-xs font-mono text-text-secondary">
                   <span>{proj.stackGroups.frontend || "Next.js"}</span>
-                  <span className="text-accent-alt">{proj.architectureSignal.split("·")[0]}</span>
+                  <span className="text-text-primary font-medium">{proj.architectureSignal.split("·")[0]}</span>
                 </div>
               </div>
             ))}

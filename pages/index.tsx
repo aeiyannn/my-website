@@ -14,7 +14,7 @@ import SocialMediaArround from "../components/Home/SocialMediaArround/SocialMedi
 import Startup from "../components/Header/StartupLogo/Startup";
 
 export default function Home() {
-  const [finishedLoading, setFinishedLoading] = useState(false);
+  const [finishedLoading, setFinishedLoading] = useState(true);
   const handleLoadDone = useCallback(() => setFinishedLoading(true), []);
 
   const meta = {

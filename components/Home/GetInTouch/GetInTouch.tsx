@@ -14,7 +14,7 @@ export default function GetInTouch() {
       <div className="flex flex-row items-center mb-4">
         <ArrowIcon className="flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-accent" />
         <div className="flex items-center space-x-2 pr-4">
-          <span className="text-accent font-mono text-sm sm:text-base">06.</span>
+          <span className="text-accent font-mono text-sm sm:text-base">07.</span>
           <h2 className="font-bold text-ink text-xl sm:text-2xl tracking-wide">
             Let&apos;s Talk
           </h2>

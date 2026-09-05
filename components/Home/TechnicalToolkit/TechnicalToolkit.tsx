@@ -8,13 +8,13 @@ export default function TechnicalToolkit() {
   const getTierStyle = (level: "production" | "familiar" | "exploring") => {
     switch (level) {
       case "production":
-        return "bg-accent/10 text-accent border-accent/30";
+        return "bg-surface-card text-text-primary border-hairline font-medium shadow-sm";
       case "familiar":
-        return "bg-surface text-text-secondary border-surface-border";
+        return "bg-background text-text-secondary border-surface-border";
       case "exploring":
-        return "bg-purple-900/20 text-purple-300 border-purple-800/40";
+        return "bg-background/60 text-text-secondary/80 border-surface-border/70 border-dashed";
       default:
-        return "bg-surface text-text-secondary border-surface-border";
+        return "bg-background text-text-secondary border-surface-border";
     }
   };
 
@@ -42,18 +42,18 @@ export default function TechnicalToolkit() {
         </p>
 
         {/* Legend */}
-        <div className="flex items-center space-x-4 mt-4 sm:mt-0 text-xs font-mono">
-          <div className="flex items-center space-x-1.5">
-            <span className="w-2 h-2 rounded-full bg-accent" />
-            <span className="text-text-primary">Production</span>
+        <div className="flex items-center space-x-5 mt-4 sm:mt-0 text-xs font-mono">
+          <div className="flex items-center space-x-2">
+            <span className="w-2.5 h-2.5 rounded bg-surface-card border border-hairline" />
+            <span className="text-text-primary font-medium">Production</span>
           </div>
-          <div className="flex items-center space-x-1.5">
-            <span className="w-2 h-2 rounded-full bg-text-secondary" />
+          <div className="flex items-center space-x-2">
+            <span className="w-2.5 h-2.5 rounded bg-background border border-surface-border" />
             <span className="text-text-secondary">Working</span>
           </div>
-          <div className="flex items-center space-x-1.5">
-            <span className="w-2 h-2 rounded-full bg-purple-400" />
-            <span className="text-purple-300">Exploring</span>
+          <div className="flex items-center space-x-2">
+            <span className="w-2.5 h-2.5 rounded bg-background/60 border border-surface-border/70 border-dashed" />
+            <span className="text-text-secondary">Exploring</span>
           </div>
         </div>
       </div>
