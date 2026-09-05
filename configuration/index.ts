@@ -158,7 +158,7 @@ export const portfolioConfig = {
         {
             title: "Umah Shanti Villa",
             projectType: "Freelance Project",
-            link: "https://vus-fe-zeta.vercel.app/",
+            link: "https://www.villaumahshanti.com/",
             image: "/umahshanti.png",
             background: "/umahshanti-bg.jpg",
             outcome: "Luxury villa website with booking and guest testimonials",
@@ -184,7 +184,7 @@ export const portfolioConfig = {
         {
             title: "Jayak Hub",
             projectType: "Office Project · Samarix",
-            link: null,
+            link: "https://jayakhub.com",
             image: "/project-1.png",
             background: "/ensvision.jpg",
             outcome: "Food delivery platform — led as Project Manager",
@@ -197,7 +197,7 @@ export const portfolioConfig = {
         {
             title: "Listr AI",
             projectType: "Office Project · Samarix × Nortra LLC",
-            link: null,
+            link: "https://listr.live",
             image: "/project-1.png",
             background: "/ensvision.jpg",
             outcome: "AI-powered lead response and follow-up tool for real estate teams",
@@ -210,7 +210,7 @@ export const portfolioConfig = {
         {
             title: "SiteFlows",
             projectType: "Office Project · Samarix",
-            link: null,
+            link: "https://siteflows.ai",
             image: "/project-1.png",
             background: "/ensvision.jpg",
             outcome: "Operations platform for short-term rental turnovers, cleanings, and damage reports",

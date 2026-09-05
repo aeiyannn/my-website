@@ -221,7 +221,7 @@ export const portfolioContent = {
         deployment: "Vercel",
       },
       image: "/umahshanti.png",
-      liveUrl: "https://vus-fe-zeta.vercel.app/",
+      liveUrl: "https://www.villaumahshanti.com/",
     },
     {
       slug: "lawn-barber",
@@ -254,7 +254,7 @@ export const portfolioContent = {
         backend: "Node.js, NestJS, TypeScript",
       },
       image: "/project-1.png",
-      liveUrl: undefined,
+      liveUrl: "https://jayakhub.com",
     },
     {
       slug: "listr-ai",
@@ -271,7 +271,7 @@ export const portfolioContent = {
         backend: "AI, Automation",
       },
       image: "/project-1.png",
-      liveUrl: undefined,
+      liveUrl: "https://listr.live",
     },
     {
       slug: "siteflows",
@@ -287,7 +287,7 @@ export const portfolioContent = {
         backend: "Node.js, TypeScript",
       },
       image: "/project-1.png",
-      liveUrl: undefined,
+      liveUrl: "https://siteflows.ai",
     },
     {
       slug: "bc-appa",
@@ -986,7 +986,7 @@ export const portfolioContent = {
       outcome: "Launched a booking platform for a luxury Bali villa with date conflict prevention and integrated card payments.",
       ownership: "Everything — booking logic, payment integration, UI design implementation, deployment.",
       stackSummary: "Next.js · Node.js · Payment Gateway · Vercel",
-      liveUrl: "https://vus-fe-zeta.vercel.app/",
+      liveUrl: "https://www.villaumahshanti.com/",
       isProprietary: false,
       problem: {
         overview: "The villa wanted a direct booking site to avoid paying high commissions to travel platforms — but needed it to handle reservations reliably, especially preventing double-bookings.",
