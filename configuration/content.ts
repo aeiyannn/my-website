@@ -96,14 +96,15 @@ export interface ToolkitCategory {
 
 export const portfolioContent = {
   positioning: {
-    roleTitle: "Full-Stack Engineer & Project Manager",
-    headline: "I build software and lead the teams that ship it.",
+    roleTitle: "Technical Project Manager / Systems Architect",
+    headline: "I run product delivery and stay close to the architecture.",
     supportingLine:
-      "Based in Hyderabad, Pakistan. Currently managing multiple product teams at Samarix — while staying close to the code and teaching the next wave of developers at SMIT.",
+      "Based in Hyderabad, Pakistan. I was promoted from Full-Stack Developer to Project Manager at Samarix after leading backend architecture decisions, unblocking delivery risks, and keeping client launches on schedule. I now manage sprint execution across live products while continuing to review system-level technical trade-offs.",
     verifiedStats: [
       { label: "Experience", value: "2+ Years", detail: "Professional delivery since Dec 2023" },
-      { label: "Current Role", value: "Project Manager", detail: "At Samarix (Jul 2026 – Present)" },
-      { label: "Also", value: "Instructor", detail: "Teaching at SMIT since Jul 2025" },
+      { label: "Current Scope", value: "4 Products", detail: "Parallel delivery across Samarix client pipelines" },
+      { label: "Event Latency", value: "Sub-200ms", detail: "SentinelKids real-time event propagation" },
+      { label: "Release Stability", value: "0 Rollbacks", detail: "Recent production release cycles" },
     ] as VerifiedStat[],
   },
 
@@ -111,19 +112,20 @@ export const portfolioContent = {
     {
       slug: "sentinelkids",
       title: "SentinelKids",
-      subtitle: "AI-Powered Parental Control Platform",
+      subtitle: "Real-Time Monitoring Platform",
       isFlagship: true,
-      categories: ["Backend", "Real-time", "AI"],
-      outcome: "Engineered a real-time monitoring backend that keeps latency under one second even under heavy load.",
+      categories: ["Backend", "Real-time", "System Design"],
+      outcome: "Delivered a Kafka and Redis event pipeline with sub-200ms propagation for core monitoring events and stable no-rollback releases.",
       context: "AI Platform · Samarix",
-      ownership: "Backend architecture — Kafka pipelines, Redis pub/sub, NestJS services.",
-      architectureSignal: "NestJS · Apache Kafka · Redis · TypeScript · real-time data pipelines",
+      ownership: "TPM and backend ownership: scoped milestones, managed sprint cadence, and guided event-driven architecture decisions.",
+      architectureSignal: "NestJS · Kafka · Redis · Docker · TypeScript",
       stackGroups: {
         backend: "NestJS, Node.js, TypeScript",
-        data: "Redis, Kafka, Pub/Sub",
-        deployment: "CI/CD, Docker",
+        data: "Redis, Kafka, Event Pipelines",
+        deployment: "Docker, CI/CD",
       },
       image: "/project-1.png",
+      caseStudyUrl: "/work/sentinelkids",
       liveUrl: undefined,
     },
     {
@@ -337,18 +339,35 @@ export const portfolioContent = {
   experience: [
     {
       company: "Samarix",
-      role: "Project Manager",
+      role: "Project Manager & Systems Architect",
       period: "July 2026 — Present",
       location: "Hyderabad, Sindh, Pakistan",
       website: "https://samarix.com/",
-      scope: "Managing delivery across multiple concurrent client product teams.",
-      ownership: "Deadline planning, team coordination, client alignment, and cross-project delivery.",
-      collaboration: "Working daily with UI/UX designers, engineering leads, and client stakeholders across several active products.",
-      outcome: "Promoted from Full-Stack Developer to Project Manager within the same company — recognized for technical leadership and delivery impact.",
+      scope: "Own delivery across SentinelKids, Jayak Hub, Listr AI, and SiteFlows with parallel sprint tracks and weekly release checkpoints.",
+      ownership: "Set milestone scope, run sprint planning, sequence dependencies, and drive architecture trade-offs across NestJS services, event pipelines, and deployment flow.",
+      collaboration: "Lead daily coordination between UI/UX, backend, QA, and client stakeholders to keep scope, quality gates, and launch dates aligned.",
+      outcome: "Internal promotion from Full-Stack Developer to Project Manager after taking ownership of architecture decisions, delivery blockers, and client launch execution.",
       highlights: [
-        "Leading Jayak Hub (food delivery platform), Listr AI (AI lead-response tool for real estate), and SiteFlows (short-term rental operations).",
-        "Running weekly planning meetings and keeping design, engineering, and client requirements in sync.",
-        "Promoted from developer to PM in under a year at Samarix (Jul 2026).",
+        "Jayak Hub: delivered staged releases for core order and operations workflows under active client timelines.",
+        "Listr AI: managed automation feature delivery for real-estate response pipelines with predictable sprint closures.",
+        "SiteFlows: shipped rental operations modules with coordinated QA handoff and production launch readiness.",
+        "SentinelKids: maintained sub-200ms real-time event propagation standards with stable release outcomes.",
+      ],
+    },
+    {
+      company: "Samarix",
+      role: "Full-Stack Developer",
+      period: "Before July 2026",
+      location: "Hyderabad, Sindh, Pakistan",
+      website: "https://samarix.com/",
+      scope: "Built backend-first product features across live client platforms while supporting frontend delivery when needed.",
+      ownership: "Implemented NestJS and Node.js services, shaped API contracts, and handled production issues that affected sprint commitments.",
+      collaboration: "Worked directly with product, design, and QA to turn fast-moving requirements into shippable increments.",
+      outcome: "Promotion to Project Manager followed sustained technical ownership, blocker resolution, and reliable client delivery.",
+      highlights: [
+        "Built event-driven service paths and API modules that became the baseline for later multi-team delivery.",
+        "Reduced delivery risk by surfacing integration blockers early and aligning fixes before release windows.",
+        "Created technical implementation plans used by engineering and QA during sprint execution.",
       ],
     },
     {
@@ -473,6 +492,82 @@ export const portfolioContent = {
   },
 
   caseStudies: {
+    sentinelkids: {
+      slug: "sentinelkids",
+      title: "SentinelKids",
+      subtitle: "Real-Time Monitoring Platform",
+      role: "Technical Project Manager & Systems Architect · Samarix",
+      timeline: "2026 — Present",
+      teamContext: "Cross-functional delivery across backend, UI/UX, QA, and client stakeholders",
+      status: "Live in production",
+      outcome: "Delivered reliable real-time monitoring flows with sub-200ms event propagation targets and zero rollback releases in recent cycles.",
+      ownership: "Owned milestone scoping, sprint cadence, architecture trade-offs, and release readiness from planning through production launch.",
+      stackSummary: "NestJS · Redis · Kafka · Docker · TypeScript",
+      isProprietary: true,
+      problem: {
+        overview: "The product required low-latency event handling for live monitoring while keeping release quality high across frequent client-facing iterations.",
+        users: "Parents, monitoring operators, support teams, and client-side product stakeholders.",
+        constraints: [
+          "Core monitoring updates had to propagate fast enough for real-time visibility.",
+          "Concurrent event streams across clients needed predictable throughput without queue pileup.",
+          "Release windows were fixed by client commitments, so regressions had to be caught before launch.",
+        ],
+        outOfScope: "Native mobile telemetry collection and hardware-level tracking firmware.",
+      },
+      systemContext: {
+        summary: "An event-driven monitoring backend built for high-throughput updates and predictable operational behavior.",
+        diagramText: "Event Producers → Kafka Topics → NestJS Consumers → Redis State Layer → API/WebSocket Delivery",
+        caption: "Decoupled event ingestion and delivery paths to control latency and isolate failures.",
+      },
+      containerView: {
+        summary: "Service-oriented runtime split between ingestion, processing, state caching, and delivery.",
+        layers: [
+          { name: "API & Service Layer", tech: "NestJS, TypeScript", role: "Request handling, validation, and monitoring workflows" },
+          { name: "Event Backbone", tech: "Apache Kafka", role: "Durable stream ingestion and asynchronous processing" },
+          { name: "Fast State Access", tech: "Redis", role: "Low-latency reads for current monitoring state" },
+          { name: "Runtime & Delivery", tech: "Docker, CI/CD", role: "Consistent environment, deployment control, and release repeatability" },
+        ],
+      },
+      criticalFlow: {
+        title: "Monitoring Event to User Visibility",
+        description: "How raw events move through the platform and appear in near real time.",
+        steps: [
+          { step: 1, title: "Event Ingestion", detail: "Incoming monitoring events are validated and published into partitioned Kafka topics." },
+          { step: 2, title: "Stream Processing", detail: "NestJS consumers process events, apply business rules, and write current state snapshots." },
+          { step: 3, title: "State Read Path", detail: "Redis serves current event state for low-latency API and socket responses." },
+          { step: 4, title: "Client Update", detail: "User-facing surfaces receive updated monitoring status through API and real-time channels." },
+        ],
+      },
+      decisions: [
+        {
+          decision: "Kafka-backed asynchronous event backbone",
+          alternatives: "Direct synchronous service-to-service event handling",
+          whyChosen: "Queue buffering and partitioned consumption gave better control over throughput and failure isolation.",
+          costOrRisk: "Added operational complexity around consumer lag and topic management.",
+          qualityAttribute: "Scalability & Reliability",
+        },
+        {
+          decision: "Redis as the primary low-latency state layer",
+          alternatives: "Serving all reads directly from persistent data stores",
+          whyChosen: "In-memory state access reduced read latency for real-time monitoring endpoints.",
+          costOrRisk: "Required careful cache invalidation and recovery strategy.",
+          qualityAttribute: "Performance",
+        },
+      ],
+      validation: {
+        testsAndMonitoring: "Event throughput tracking, consumer lag monitoring, release checklists, and pre-launch QA signoff gates.",
+        whatShipped: [
+          "Event pipeline handling concurrent client monitoring streams.",
+          "Real-time delivery path meeting sub-200ms propagation targets on core flows.",
+          "Release process that held zero rollback incidents across recent deployments.",
+        ],
+        whatToImproveNext: [
+          "Automated replay tooling for selective event backfills.",
+          "Extended alerting on cross-topic lag spikes during peak windows.",
+        ],
+      },
+    },
+
     "sehat-kahani": {
       slug: "sehat-kahani",
       title: "Sehat Kahani",
