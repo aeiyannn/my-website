@@ -192,18 +192,81 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
             </div>
           </section>
 
+          {/* Platform Capabilities & Feature Architecture */}
+          {study.featureBreakdown && study.featureBreakdown.length > 0 && (
+            <section className="space-y-6 mb-16">
+              <div className="border-b border-surface-border pb-2">
+                <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 02</span>
+                <h2 className="text-2xl font-bold text-text-primary">Platform Capabilities &amp; Feature Architecture</h2>
+                <p className="text-xs text-text-secondary font-mono mt-1">
+                  Comprehensive architectural breakdown covering user-facing controls, background services, and automated workflows.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {study.featureBreakdown.map((feat, idx) => (
+                  <div
+                    key={idx}
+                    className="p-5 rounded-xl bg-surface border border-surface-border hover:border-accent/40 transition-colors flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="font-mono text-[10px] text-accent font-bold uppercase tracking-wider bg-background px-2.5 py-1 rounded border border-surface-border">
+                          {feat.badge || `Module 0${idx + 1}`}
+                        </span>
+                        <span className="font-mono text-[11px] text-text-secondary">
+                          0{idx + 1}
+                        </span>
+                      </div>
+                      <h3 className="text-base font-bold text-text-primary mt-1">
+                        {feat.title}
+                      </h3>
+                      <p className="text-xs text-text-secondary font-body mt-1 mb-4 leading-relaxed">
+                        {feat.subtitle}
+                      </p>
+
+                      <ul className="space-y-2 pt-3 border-t border-surface-border/60">
+                        {feat.capabilities.map((cap, capIdx) => {
+                          const parts = cap.split(":");
+                          const hasColon = parts.length > 1;
+                          return (
+                            <li key={capIdx} className="flex items-start gap-2 text-xs text-text-secondary leading-relaxed">
+                              <span className="text-accent font-mono text-xs flex-none mt-0.5">▹</span>
+                              <span>
+                                {hasColon ? (
+                                  <>
+                                    <strong className="text-text-primary font-medium">{parts[0]}:</strong>
+                                    {parts.slice(1).join(":")}
+                                  </>
+                                ) : (
+                                  cap
+                                )}
+                              </span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* 3. System Context View */}
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
-              <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 02</span>
-              <h2 className="text-2xl font-bold text-text-primary">Product Flow</h2>
+              <span className="font-mono text-xs text-accent uppercase tracking-widest block">
+                {study.featureBreakdown ? "Section 03" : "Section 02"}
+              </span>
+              <h2 className="text-2xl font-bold text-text-primary">Product Flow &amp; System Context</h2>
             </div>
 
             <div className="p-6 rounded-xl bg-surface border border-surface-border">
               <p className="font-body text-sm text-text-secondary mb-4">{study.systemContext.summary}</p>
 
               {/* Text Equivalent / ASCII representation */}
-              <div className="p-4 rounded-lg bg-background border border-surface-border font-mono text-xs text-accent leading-relaxed">
+              <div className="p-4 rounded-lg bg-background border border-surface-border font-mono text-xs text-accent leading-relaxed overflow-x-auto">
                 {study.systemContext.diagramText}
               </div>
 
@@ -216,8 +279,10 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           {/* 4. Container & Runtime View */}
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
-              <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 03</span>
-              <h2 className="text-2xl font-bold text-text-primary">Tech Stack and Why It Was Used</h2>
+              <span className="font-mono text-xs text-accent uppercase tracking-widest block">
+                {study.featureBreakdown ? "Section 04" : "Section 03"}
+              </span>
+              <h2 className="text-2xl font-bold text-text-primary">Tech Stack and Runtime Architecture</h2>
             </div>
 
             <div className="space-y-3">
@@ -241,8 +306,10 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           {/* 5. One Critical Flow */}
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
-              <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 04</span>
-              <h2 className="text-2xl font-bold text-text-primary">User Journey</h2>
+              <span className="font-mono text-xs text-accent uppercase tracking-widest block">
+                {study.featureBreakdown ? "Section 05" : "Section 04"}
+              </span>
+              <h2 className="text-2xl font-bold text-text-primary">Critical Execution Flow</h2>
             </div>
 
             <div className="p-6 rounded-xl bg-surface border border-surface-border space-y-4">
@@ -274,8 +341,10 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           {/* 6. Decisions & Trade-Offs Table */}
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
-              <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 05</span>
-              <h2 className="text-2xl font-bold text-text-primary">Key Decisions</h2>
+              <span className="font-mono text-xs text-accent uppercase tracking-widest block">
+                {study.featureBreakdown ? "Section 06" : "Section 05"}
+              </span>
+              <h2 className="text-2xl font-bold text-text-primary">Architectural Decisions &amp; Trade-Offs</h2>
             </div>
 
             <div className="overflow-x-auto rounded-xl border border-surface-border bg-surface">
@@ -311,8 +380,10 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           {/* 7. Validation, What Shipped & Next Improvements */}
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
-              <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 06</span>
-              <h2 className="text-2xl font-bold text-text-primary">What We Delivered</h2>
+              <span className="font-mono text-xs text-accent uppercase tracking-widest block">
+                {study.featureBreakdown ? "Section 07" : "Section 06"}
+              </span>
+              <h2 className="text-2xl font-bold text-text-primary">What We Delivered &amp; Future Roadmap</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -346,24 +417,46 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
             </div>
           </section>
 
-          {/* Cross-case study navigation */}
-          <div className="p-6 rounded-xl bg-surface border border-surface-border mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <span className="font-mono text-[11px] text-accent uppercase tracking-wider block">
-                Technical Case Study {study.slug === "sentinelkids" ? "1 of 2" : "2 of 2"}
-              </span>
-              <h3 className="text-base font-bold text-text-primary mt-0.5">
-                {study.slug === "sentinelkids"
-                  ? "Explore Case Study 02: Sehat Kahani"
-                  : "Explore Case Study 01: SentinelKids"}
-              </h3>
+          {/* Cross-case study navigation across all flagship studies */}
+          <section className="mb-12">
+            <div className="border-b border-surface-border pb-2 mb-6">
+              <span className="font-mono text-xs text-accent uppercase tracking-widest block">More Architectures</span>
+              <h2 className="text-xl font-bold text-text-primary">Explore Other Flagship Case Studies</h2>
             </div>
-            <Link href={study.slug === "sentinelkids" ? "/work/sehat-kahani" : "/work/sentinelkids"}>
-              <span className="font-mono text-xs text-text-primary hover:text-accent border border-surface-border bg-background px-4 py-2 rounded transition-colors cursor-pointer inline-flex items-center gap-1.5 whitespace-nowrap">
-                {study.slug === "sentinelkids" ? "Read Sehat Kahani Architecture →" : "Read SentinelKids Architecture →"}
-              </span>
-            </Link>
-          </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {Object.values(portfolioContent.caseStudies)
+                .filter((s) => s.slug !== study.slug && ["sentinelkids", "sehat-kahani", "neem-io"].includes(s.slug))
+                .map((otherStudy) => (
+                  <div
+                    key={otherStudy.slug}
+                    className="p-5 rounded-xl bg-surface border border-surface-border hover:border-accent/50 transition-colors flex flex-col justify-between"
+                  >
+                    <div>
+                      <span className="font-mono text-[10px] text-accent uppercase tracking-wider block mb-1">
+                        Flagship Case Study
+                      </span>
+                      <h3 className="text-base font-bold text-text-primary">{otherStudy.title}</h3>
+                      <p className="text-xs font-mono text-text-secondary mt-0.5">{otherStudy.subtitle}</p>
+                      <p className="text-xs text-text-secondary mt-2.5 line-clamp-2 leading-relaxed">
+                        {otherStudy.outcome}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-surface-border flex items-center justify-between">
+                      <span className="font-mono text-[11px] text-text-secondary truncate max-w-[180px]">
+                        {otherStudy.stackSummary.split("·")[0]}
+                      </span>
+                      <Link href={`/work/${otherStudy.slug}`}>
+                        <span className="font-mono text-xs text-accent hover:underline flex items-center gap-1 cursor-pointer">
+                          Read Case Study →
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </section>
 
           {/* 8. End-of-Study Contact CTA */}
           <section className="p-8 rounded-xl bg-surface border border-surface-border text-center space-y-4">

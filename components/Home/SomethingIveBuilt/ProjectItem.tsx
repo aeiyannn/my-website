@@ -148,6 +148,26 @@ export default function ProjectItem({
             </p>
           </div>
 
+          {/* Core Capabilities & Features (Outside View) */}
+          {project.keyFeatures && project.keyFeatures.length > 0 && (
+            <div className="mt-4 p-3.5 rounded-lg bg-background/90 border border-surface-border">
+              <span className="font-mono text-[11px] text-accent uppercase tracking-wider block mb-2 font-semibold">
+                Core Capabilities &amp; Features:
+              </span>
+              <ul className="grid grid-cols-1 gap-2 text-xs">
+                {project.keyFeatures.map((feat, fIdx) => (
+                  <li key={fIdx} className="flex items-start gap-2 text-text-secondary leading-relaxed">
+                    <span className="text-accent font-mono text-xs flex-none mt-0.5">▹</span>
+                    <span className="font-body text-text-secondary">
+                      <strong className="text-text-primary font-medium">{feat.split(":")[0]}:</strong>
+                      {feat.split(":").slice(1).join(":")}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Architecture Signal (Without Hover) */}
           <div className="mt-3 p-2.5 rounded bg-background/50 border border-surface-border/80">
             <span className="font-mono text-[11px] text-accent-alt uppercase tracking-wider block">
