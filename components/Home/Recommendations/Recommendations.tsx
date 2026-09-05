@@ -84,7 +84,7 @@ export default function Recommendations() {
           >
             {/* Quote mark */}
             <span className="font-Header text-5xl text-accent/30 leading-none select-none mb-2" aria-hidden="true">
-              "
+              &ldquo;
             </span>
 
             <p className="font-body text-sm text-muted leading-relaxed flex-1">

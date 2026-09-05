@@ -53,7 +53,7 @@ export default function GetInTouch() {
                 Hiring or building a team? →
               </h4>
               <p className="text-xs text-muted font-body mt-2 leading-relaxed">
-                I'm open to full-time roles — engineering, team lead, or project management positions.
+                I&apos;m open to full-time roles — engineering, team lead, or project management positions.
               </p>
             </div>
           </a>
