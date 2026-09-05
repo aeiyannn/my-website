@@ -1,76 +1,196 @@
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Img from "../../smallComp/image/Img";
 import GithubIcon from "../../Icons/GithubIconForSomethingIveBuild";
 import ExternalLink from "../../Icons/ExternalLink";
+import { useRouter } from "next/router";
+import { ProjectEvidence } from "../../../configuration/content";
 
-export default function ProjectItem({ project, index }) {
+export default function ProjectItem({
+  project,
+  index,
+}: {
+  project: ProjectEvidence;
+  index: number;
+}) {
   const router = useRouter();
-  // Determine layout based on index (even/odd)
   const isOdd = index % 2 !== 0;
+  const cardRef = useRef<HTMLElement>(null);
 
-  // Conditionally set Tailwind classes for layout
-  const contentOrder = isOdd ? "md:order-1" : "";
-  const contentAlignment = isOdd ? "items-start" : "md:items-end text-right";
-  const contentCols = isOdd
-    ? "xl:col-span-6 col-span-8"
-    : "xl:col-span-6 xl:col-start-7 col-start-5 col-span-8";
-  const imageCols = isOdd ? "col-start-6 col-span-7" : "col-span-7";
-  const techAlignment = isOdd ? "md:justify-start" : "md:justify-end";
-  const textAlignment = isOdd ? "text-left" : "md:text-right";
-  const titleLink = project.link.startsWith("/") ? (
-    <Link href={project.link}>
-      <span className="md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">{project.title}</span>
-    </Link>
-  ) : (
-    <a href={project.link} target="_blank" rel="noopener noreferrer">
-      <span className="md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">{project.title}</span>
-    </a>
-  );
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const el = cardRef.current;
+    if (!el || window.innerWidth < 768) return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(900px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg) scale(1.01)`;
+  };
+
+  const handleMouseLeave = () => {
+    const el = cardRef.current;
+    if (!el) return;
+    el.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)";
+  };
 
   return (
-    <div data-aos="fade-up" className="relative md:grid md:grid-cols-12 w-full md:h-96">
-      {/* Left/Right Desktop Image */}
-      <div className="hidden bg-AAprimary z-10 py-4 absolute md:grid grid-cols-12 w-full h-full content-center">
-        <div className={`relative rounded w-full h-full ${imageCols}`}>
-          <a href={project.link} target="_blank" rel="noreferrer">
-            <div className="absolute w-full h-full rounded bg-AAprimary transition-opacity opacity-50 hover:opacity-0 hover:cursor-pointer duration-300"></div>
-          </a>
-          <Img src={project.image} alt="Project Screenshot" className="w-full rounded h-full" />
+    <article
+      ref={cardRef}
+      data-project-slug={project.slug}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="project-card rounded-xl bg-surface border border-surface-border hover:border-accent/40 transition-[border-color] duration-200 overflow-hidden flex flex-col lg:grid lg:grid-cols-12 gap-6 p-6 sm:p-8"
+      style={{ transformStyle: "preserve-3d", willChange: "transform", transition: "transform 0.1s ease, border-color 0.2s ease" }}
+      aria-labelledby={`project-title-${project.slug}`}
+    >
+      {/* Left Column (Desktop image) or Top (Mobile) */}
+      <div className={`lg:col-span-5 flex flex-col justify-between ${isOdd ? "lg:order-2" : "lg:order-1"}`}>
+        <div className="relative rounded-lg overflow-hidden border border-surface-border aspect-video bg-background/80 group">
+          <Img
+            src={project.image}
+            alt={`${project.title} — ${project.subtitle}`}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open live platform for ${project.title}`}
+              className="absolute inset-0 bg-background/40 hover:bg-background/10 transition-colors duration-200 z-10"
+            />
+          )}
+        </div>
+
+        {/* Stack chips grouped by layer */}
+        <div className="mt-4 pt-3 border-t border-surface-border">
+          <span className="font-mono text-[11px] text-text-secondary uppercase tracking-wider block mb-2">
+            Layered Tech Stack
+          </span>
+          <div className="space-y-1.5 text-xs font-mono">
+            {project.stackGroups.frontend && (
+              <div className="flex items-start gap-2">
+                <span className="text-accent text-[11px] min-w-[65px]">Frontend:</span>
+                <span className="text-text-secondary">{project.stackGroups.frontend}</span>
+              </div>
+            )}
+            {project.stackGroups.backend && (
+              <div className="flex items-start gap-2">
+                <span className="text-accent-alt text-[11px] min-w-[65px]">Backend:</span>
+                <span className="text-text-secondary">{project.stackGroups.backend}</span>
+              </div>
+            )}
+            {project.stackGroups.data && (
+              <div className="flex items-start gap-2">
+                <span className="text-warning text-[11px] min-w-[65px]">Data:</span>
+                <span className="text-text-secondary">{project.stackGroups.data}</span>
+              </div>
+            )}
+            {project.stackGroups.integrations && (
+              <div className="flex items-start gap-2">
+                <span className="text-purple-300 text-[11px] min-w-[65px]">Bridge:</span>
+                <span className="text-text-secondary">{project.stackGroups.integrations}</span>
+              </div>
+            )}
+            {project.stackGroups.deployment && (
+              <div className="flex items-start gap-2">
+                <span className="text-text-secondary text-[11px] min-w-[65px]">Deploy:</span>
+                <span className="text-text-secondary">{project.stackGroups.deployment}</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Project Content */}
-      <div className="md:absolute py-4 md:grid md:grid-cols-12 w-full h-full content-center">
-        {/* Mobile Background Image */}
-        <div className=" w-full h-full bg-opacity-70 z-0 md:order-2">
-          <div className="relative w-full h-full">
-            <Img src={project.image} alt="Project Background" className="w-full h-full" />
-          </div>
-        </div>
-
-        <div className={`px-8 pt-8 sm:pt-12 md:py-0 flex flex-col items-start space-y-3 ${contentCols} ${contentAlignment} ${contentOrder}`}>
-          <div className="flex flex-col space-y-1 z-10">
-            <span className="text-AAsecondary text-base">{project.projectType}</span>
-            {titleLink}
-          </div>
-          <div className="w-full md:bg-AAtertiary rounded-md py-6 md:p-6 z-10">
-            <p className={`text-gray-300 md:text-gray-400 ${textAlignment}`}>{project.description}</p>
-          </div>
-          <ul className={`flex flex-wrap w-full text-gray-300 md:text-gray-400 text-sm font-Text2 ${techAlignment}`}>
-            {project.tech.map((techItem) => (
-              <span key={techItem} className="pr-4 z-10">{techItem}</span>
+      {/* Right Column: Narrative Proof & Details */}
+      <div className={`lg:col-span-7 flex flex-col justify-between ${isOdd ? "lg:order-1" : "lg:order-2"}`}>
+        <div>
+          {/* Context & Category Tags */}
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            <span className="font-mono text-xs text-accent uppercase tracking-wider">
+              {project.context}
+            </span>
+            <span className="text-surface-border">·</span>
+            {project.categories.map((cat) => (
+              <span
+                key={cat}
+                className="font-mono text-[10px] text-text-secondary bg-background px-2 py-0.5 rounded border border-surface-border"
+              >
+                {cat}
+              </span>
             ))}
-          </ul>
-          <div className="z-10 flex flex-row space-x-5">
-            {project.github && <GithubIcon link={project.github} />}
-            <a href={project.link} target="_blank" rel="noreferrer">
-              <ExternalLink url={project.link} router={router} />
-            </a>
+          </div>
+
+          {/* Title */}
+          <h3 id={`project-title-${project.slug}`} className="text-xl sm:text-2xl font-bold text-text-primary">
+            {project.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-text-secondary font-mono mt-0.5">
+            {project.subtitle}
+          </p>
+
+          {/* Outcome Headline (Without Hover) */}
+          <div className="mt-4 p-3 rounded-lg bg-background/80 border border-surface-border">
+            <span className="font-mono text-[11px] text-accent uppercase tracking-wider block mb-1">
+              Measurable Outcome
+            </span>
+            <p className="text-sm font-medium text-text-primary leading-snug">
+              {project.outcome}
+            </p>
+          </div>
+
+          {/* Ownership Line (Without Hover) */}
+          <div className="mt-3">
+            <span className="font-mono text-[11px] text-text-secondary uppercase tracking-wider">
+              Engineering Ownership:
+            </span>
+            <p className="text-xs sm:text-sm text-text-secondary mt-0.5 leading-relaxed">
+              {project.ownership}
+            </p>
+          </div>
+
+          {/* Architecture Signal (Without Hover) */}
+          <div className="mt-3 p-2.5 rounded bg-background/50 border border-surface-border/80">
+            <span className="font-mono text-[11px] text-accent-alt uppercase tracking-wider block">
+              Architecture Signal:
+            </span>
+            <p className="font-mono text-xs text-text-primary mt-1">
+              {project.architectureSignal}
+            </p>
           </div>
         </div>
+
+        {/* Action Controls */}
+        <div className="flex flex-wrap items-center justify-between gap-4 mt-6 pt-4 border-t border-surface-border">
+          <div className="flex items-center gap-4">
+            {project.caseStudyUrl && (
+              <Link href={project.caseStudyUrl}>
+                <span className="inline-flex items-center font-mono text-xs text-accent hover:text-white border border-accent/70 hover:border-accent hover:bg-accent px-4 py-2 rounded transition-colors cursor-pointer">
+                  Read architecture case study →
+                </span>
+              </Link>
+            )}
+
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Visit live deployment of ${project.title}`}
+                className="font-mono text-xs text-text-secondary hover:text-accent transition-colors inline-flex items-center gap-1"
+              >
+                <span>Live deployment</span>
+                <ExternalLink url={project.liveUrl} router={router} />
+              </a>
+            )}
+          </div>
+
+          {project.githubUrl && (
+            <div className="flex items-center space-x-2">
+              <GithubIcon link={project.githubUrl} />
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </article>
   );
 }

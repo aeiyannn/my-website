@@ -68,6 +68,14 @@ const Header = (props: { finishedLoading: boolean,sectionsRef }) => {
 
   return (
     <>
+      {/* Skip to Content */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent focus:text-background focus:font-mono focus:font-bold focus:rounded focus:outline-none focus:ring-2 focus:ring-accent"
+      >
+        Skip to main content
+      </a>
+
       {/* Mobile visible Navbar component, controlling ShowElement state to hide itself and rotate itself */}
       <MobileMenu rotate={rotate} setRotate={setRotate} setShowElement={setShowElement} ShowElement={ShowElement} />
       {/* This parent element for Menu */}

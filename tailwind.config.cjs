@@ -15,38 +15,63 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        Header: ["Lato", "sans-serif"],
-        Text2: ["Lato", "sans-serif"],
-        About: ["Playfair Display", "serif"],
-        Arimo: ["Arimo", "sans-serif"],
+        // Display serif — Claude design system (Cormorant Garamond = open-source Copernicus substitute)
+        Header: ["Cormorant Garamond", "Tiempos Headline", "Georgia", "serif"],
+        display: ["Cormorant Garamond", "Tiempos Headline", "Georgia", "serif"],
+        // Humanist sans for body
+        Text2: ["Inter", "-apple-system", "sans-serif"],
+        body: ["Inter", "-apple-system", "sans-serif"],
+        mono: ["JetBrains Mono", "IBM Plex Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {
-        AAprimary: "#0b192f",
-        AAsecondary: "#64ffda",
-        AAError: "#ff6489",
-        AAtertiary: "#112340",
-        ResumeButtonHover: "#153040",
-        MobileNavBarColor: "#112340",
-        StartupBackground: "#020c1b",
+        // Claude design system tokens
+        canvas: "#faf9f5",
+        "surface-soft": "#f5f0e8",
+        "surface-card": "#efe9de",
+        "surface-cream-strong": "#e8e0d2",
+        "surface-dark": "#181715",
+        "surface-dark-elevated": "#252320",
+        "surface-dark-soft": "#1f1e1b",
+        ink: "#141413",
+        "body-strong": "#252523",
+        muted: "#6c6a64",
+        "muted-soft": "#8e8b82",
+        coral: "#cc785c",
+        "coral-active": "#a9583e",
+        hairline: "#e6dfd8",
+        "hairline-soft": "#ebe6df",
+        "on-dark": "#faf9f5",
+        "on-dark-soft": "#a09d96",
+        "accent-teal": "#5db8a6",
+        "accent-amber": "#e8a55a",
+        // Backward-compat aliases → mapped to Claude tokens
+        background: "#faf9f5",
+        surface: "#efe9de",
+        "surface-border": "#e6dfd8",
+        "text-primary": "#141413",
+        "text-secondary": "#6c6a64",
+        accent: "#cc785c",
+        "accent-alt": "#5db8a6",
+        warning: "#d4a017",
+        AAprimary: "#faf9f5",
+        AAsecondary: "#cc785c",
+        AAtertiary: "#efe9de",
+        AAborder: "#e6dfd8",
+        ResumeButtonHover: "#e8e0d2",
+        MobileNavBarColor: "#efe9de",
+        StartupBackground: "#faf9f5",
+        AAError: "#c64545",
+      },
+      transitionDuration: {
+        DEFAULT: "200ms",
       },
       screens: {
         sm: "640px",
-        // => @media (min-width: 640px) { ... }
-
         md: "768px",
-        // => @media (min-width: 768px) { ... }
-
         lg: "1024px",
-        // => @media (min-width: 1024px) { ... }
-
         xl: "1280px",
-        // => @media (min-width: 1280px) { ... }
-
         "2xl": "1536px",
-        // => @media (min-width: 1536px) { ... }
         "3xl": "1920px",
-        "4xl": "2560px",
-        "5xl": "3840px",
       },
     },
   },

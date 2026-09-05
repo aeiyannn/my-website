@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 30px;
+    background: #2b2b2b;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .row {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .preview-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #383838;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .tab-simulation-light {
+    background: #e8e8e8;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-size: 12px;
+  }
+  .tab-simulation-dark {
+    background: #181818;
+    padding: 8px 16px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #eee;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+  <h2>Favicon Design Candidates (Anthropic / Claude Design System)</h2>
+  <div class="row">
+    <!-- Option A: Dark Ink with Cream AK & Coral Dot -->
+    <div class="card">
+      <div style="font-weight: 600;">Option A: Warm Dark Ink (#141413) + Cream serif AK + Coral dot</div>
+      <svg id="opt-a" width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <rect width="128" height="128" rx="28" fill="#141413"/>
+        <rect x="1" y="1" width="126" height="126" rx="27" fill="none" stroke="#e6dfd8" stroke-opacity="0.15" stroke-width="1.5"/>
+        <text x="59" y="86" font-family="'Cormorant Garamond', 'Times New Roman', serif" font-size="78" font-weight="600" fill="#faf9f5" text-anchor="middle" letter-spacing="-3">AK</text>
+        <circle cx="103" cy="80" r="5.5" fill="#cc785c"/>
+      </svg>
+      <div class="preview-box">
+        <div class="tab-simulation-light">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#141413"/><text x="59" y="86" font-family="'Cormorant Garamond', serif" font-size="78" font-weight="600" fill="#faf9f5" text-anchor="middle" letter-spacing="-3">AK</text><circle cx="103" cy="80" r="6" fill="#cc785c"/></svg>
+          Aeiyan Khan
+        </div>
+        <div class="tab-simulation-dark">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#141413"/><rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#faf9f5" stroke-opacity="0.25" stroke-width="4"/><text x="59" y="86" font-family="'Cormorant Garamond', serif" font-size="78" font-weight="600" fill="#faf9f5" text-anchor="middle" letter-spacing="-3">AK</text><circle cx="103" cy="80" r="6" fill="#cc785c"/></svg>
+          Aeiyan Khan
+        </div>
+      </div>
+    </div>
+
+    <!-- Option B: Warm Coral Background (#cc785c) + Cream serif AK -->
+    <div class="card">
+      <div style="font-weight: 600;">Option B: Signature Coral (#cc785c) + Warm Cream AK</div>
+      <svg id="opt-b" width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <rect width="128" height="128" rx="28" fill="#cc785c"/>
+        <text x="64" y="87" font-family="'Cormorant Garamond', 'Times New Roman', serif" font-size="82" font-weight="600" fill="#faf9f5" text-anchor="middle" letter-spacing="-3">AK</text>
+      </svg>
+      <div class="preview-box">
+        <div class="tab-simulation-light">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#cc785c"/><text x="64" y="87" font-family="'Cormorant Garamond', serif" font-size="82" font-weight="600" fill="#faf9f5" text-anchor="middle" letter-spacing="-3">AK</text></svg>
+          Aeiyan Khan
+        </div>
+        <div class="tab-simulation-dark">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#cc785c"/><text x="64" y="87" font-family="'Cormorant Garamond', serif" font-size="82" font-weight="600" fill="#faf9f5" text-anchor="middle" letter-spacing="-3">AK</text></svg>
+          Aeiyan Khan
+        </div>
+      </div>
+    </div>
+
+    <!-- Option C: Cream Canvas (#faf9f5) + Dark Ink AK + Coral dot -->
+    <div class="card">
+      <div style="font-weight: 600;">Option C: Cream Canvas (#faf9f5) + Dark Ink AK + Coral dot</div>
+      <svg id="opt-c" width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <rect width="128" height="128" rx="28" fill="#faf9f5"/>
+        <rect x="1" y="1" width="126" height="126" rx="27" fill="none" stroke="#e6dfd8" stroke-width="2"/>
+        <text x="59" y="86" font-family="'Cormorant Garamond', 'Times New Roman', serif" font-size="78" font-weight="600" fill="#141413" text-anchor="middle" letter-spacing="-3">AK</text>
+        <circle cx="103" cy="80" r="5.5" fill="#cc785c"/>
+      </svg>
+      <div class="preview-box">
+        <div class="tab-simulation-light">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#faf9f5"/><rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#d5cebe" stroke-width="4"/><text x="59" y="86" font-family="'Cormorant Garamond', serif" font-size="78" font-weight="600" fill="#141413" text-anchor="middle" letter-spacing="-3">AK</text><circle cx="103" cy="80" r="6" fill="#cc785c"/></svg>
+          Aeiyan Khan
+        </div>
+        <div class="tab-simulation-dark">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#faf9f5"/><text x="59" y="86" font-family="'Cormorant Garamond', serif" font-size="78" font-weight="600" fill="#141413" text-anchor="middle" letter-spacing="-3">AK</text><circle cx="103" cy="80" r="6" fill="#cc785c"/></svg>
+          Aeiyan Khan
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Single A and Anthropic Asterisk / Spark glyph variants -->
+  <div class="row">
+    <!-- Option D: Coral Asterisk/Spark Glyph (Claude brand mark) -->
+    <div class="card">
+      <div style="font-weight: 600;">Option D: Anthropic / Claude Radial Mark (Coral on Dark Ink)</div>
+      <svg id="opt-d" width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <rect width="128" height="128" rx="28" fill="#141413"/>
+        <rect x="1" y="1" width="126" height="126" rx="27" fill="none" stroke="#e6dfd8" stroke-opacity="0.15" stroke-width="1.5"/>
+        <!-- 4-spoke Claude asterisk/sunburst -->
+        <g transform="translate(64, 64) scale(0.9)">
+          <path d="M-8,-44 C-4,-20 -20,-4 -44,-8 C-20,4 -4,20 -8,44 C4,20 20,4 44,8 C20,-4 4,-20 8,-44 Z" fill="#cc785c"/>
+          <circle cx="0" cy="0" r="5" fill="#faf9f5"/>
+        </g>
+      </svg>
+      <div class="preview-box">
+        <div class="tab-simulation-light">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#141413"/><g transform="translate(64, 64) scale(0.9)"><path d="M-8,-44 C-4,-20 -20,-4 -44,-8 C-20,4 -4,20 -8,44 C4,20 20,4 44,8 C20,-4 4,-20 8,-44 Z" fill="#cc785c"/><circle cx="0" cy="0" r="6" fill="#faf9f5"/></g></svg>
+          Aeiyan Khan
+        </div>
+        <div class="tab-simulation-dark">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#141413"/><rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#faf9f5" stroke-opacity="0.25" stroke-width="4"/><g transform="translate(64, 64) scale(0.9)"><path d="M-8,-44 C-4,-20 -20,-4 -44,-8 C-20,4 -4,20 -8,44 C4,20 20,4 44,8 C20,-4 4,-20 8,-44 Z" fill="#cc785c"/><circle cx="0" cy="0" r="6" fill="#faf9f5"/></g></svg>
+          Aeiyan Khan
+        </div>
+      </div>
+    </div>
+
+    <!-- Option E: Serif "A" with Coral Spark / Asterisk Accent -->
+    <div class="card">
+      <div style="font-weight: 600;">Option E: Dark Ink (#141413) + Cream serif 'A' + Coral Star</div>
+      <svg id="opt-e" width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <rect width="128" height="128" rx="28" fill="#141413"/>
+        <rect x="1" y="1" width="126" height="126" rx="27" fill="none" stroke="#e6dfd8" stroke-opacity="0.15" stroke-width="1.5"/>
+        <text x="56" y="90" font-family="'Cormorant Garamond', 'Times New Roman', serif" font-size="88" font-weight="600" fill="#faf9f5" text-anchor="middle">A</text>
+        <!-- small coral 4-spoke star accent top right -->
+        <g transform="translate(92, 42) scale(0.32)">
+          <path d="M0,-32 C1,-10 10,-1 32,0 C10,1 1,10 0,32 C-1,10 -10,1 -32,0 C-10,-1 -1,-10 0,-32 Z" fill="#cc785c"/>
+        </g>
+      </svg>
+      <div class="preview-box">
+        <div class="tab-simulation-light">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#141413"/><text x="56" y="90" font-family="'Cormorant Garamond', serif" font-size="88" font-weight="600" fill="#faf9f5" text-anchor="middle">A</text><g transform="translate(92, 42) scale(0.32)"><path d="M0,-32 C1,-10 10,-1 32,0 C10,1 1,10 0,32 C-1,10 -10,1 -32,0 C-10,-1 -1,-10 0,-32 Z" fill="#cc785c"/></g></svg>
+          Aeiyan Khan
+        </div>
+        <div class="tab-simulation-dark">
+          <svg width="16" height="16" viewBox="0 0 128 128"><rect width="128" height="128" rx="28" fill="#141413"/><rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="#faf9f5" stroke-opacity="0.25" stroke-width="4"/><text x="56" y="90" font-family="'Cormorant Garamond', serif" font-size="88" font-weight="600" fill="#faf9f5" text-anchor="middle">A</text><g transform="translate(92, 42) scale(0.32)"><path d="M0,-32 C1,-10 10,-1 32,0 C10,1 1,10 0,32 C-1,10 -10,1 -32,0 C-10,-1 -1,-10 0,-32 Z" fill="#cc785c"/></g></svg>
+          Aeiyan Khan
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

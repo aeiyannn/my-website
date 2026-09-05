@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx getdesign@latest *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl *)",
+      "Bash(npx skillfish *)",
+      "Bash(npx tsc *)",
+      "Bash(npx kill-port *)",
+      "Bash(git ls-tree *)",
+      "Bash(git checkout *)",
+      "Bash(git -C \"D:/my-website\" add -A)",
+      "Bash(git -C \"D:/my-website\" status)"
+    ]
+  }
+}

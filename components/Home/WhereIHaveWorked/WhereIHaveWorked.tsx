@@ -1,109 +1,157 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import ArrowIcon from "../../Icons/ArrowIcon";
-import ExperienceItem from "./Descriptions/Zetsol"; // General experience renderer
-import { portfolioConfig } from "../../../configuration";
+import { portfolioContent, ExperienceRole } from "../../../configuration/content";
 
 export default function WhereIHaveWorked() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const activeCompany = portfolioConfig.experience[activeIndex];
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const roles = portfolioContent.experience;
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let cleanup: (() => void) | null = null;
+    import("gsap").then(({ default: gsap }) => {
+      import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const items = gsap.utils.toArray<HTMLElement>(".timeline-entry");
+        items.forEach((item) => {
+          gsap.from(item, {
+            scrollTrigger: {
+              trigger: item,
+              start: "top 85%",
+              once: true,
+            },
+            y: 24,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.out",
+            clearProps: "all",
+          });
+        });
+
+        cleanup = () => ScrollTrigger.getAll().forEach((t) => t.kill());
+      });
+    });
+
+    return () => cleanup?.();
+  }, []);
 
   return (
-    <div
-      data-aos="fade-up"
-      className="flex flex-col items-center justify-center py-24 space-y-12 bg-AAprimary"
+    <section
+      id="experience"
+      ref={sectionRef}
+      aria-label="Experience and Leadership Timeline"
+      className="flex flex-col bg-background w-full px-6 sm:px-12 md:px-20 lg:px-28 xl:px-44 2xl:px-72 py-24 border-t border-surface-border"
     >
-      {/* Title */}
-      <section className="flex flex-row items-center">
-        <div className="flex flex-row items-center">
-          <ArrowIcon className="flex-none h-4 md:h-6 w-4 md:w-5 text-AAsecondary" />
-          <span className="text-AAsecondary font-sans text-sm sm:text-xl">
-            {" "}
-            02.
-          </span>
+      {/* Section Header */}
+      <div className="flex flex-row items-center mb-4">
+        <ArrowIcon className="flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-accent" />
+        <div className="flex items-center space-x-2 pr-4">
+          <span className="text-accent font-mono text-sm sm:text-base">03.</span>
+          <h2 className="font-bold text-text-primary text-xl sm:text-2xl tracking-wide">
+            Experience &amp; Leadership
+          </h2>
         </div>
+        <div className="bg-surface-border h-[1px] flex-1 max-w-xs" />
+      </div>
 
-        <span className="text-gray-200 opacity-85 font-bold tracking-wider text-lg md:text-2xl px-3">
-          Where I&apos;ve Worked
-        </span>
-        <div className="bg-gray-400 h-[0.2px] w-16 sm:w-44 md:w-80"></div>
-      </section>
+      <p className="font-body text-text-secondary text-sm sm:text-base max-w-2xl mb-12">
+        My engineering leadership journey. Every role is structured across scope, ownership,
+        cross-functional collaboration, and verified production outcomes.
+      </p>
 
-      {/* Main content */}
-      <section
-        className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0
-        justify-center items-center md:items-start"
-      >
-        <CompaniesBar
-          activeIndex={activeIndex}
-          setActiveIndex={setActiveIndex}
-        />
+      {/* Accessible Vertical Timeline */}
+      <div className="relative pl-6 sm:pl-8 border-l border-surface-border space-y-12 ml-2 sm:ml-4">
+        {roles.map((item, idx) => (
+          <article
+            key={item.company}
+            className="timeline-entry relative group"
+            aria-labelledby={`role-title-${idx}`}
+          >
+            {/* Timeline Node Dot */}
+            <div
+              className={`absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full border-2 transition-colors ${
+                idx === 0
+                  ? "bg-accent border-background shadow-md shadow-accent/20"
+                  : "bg-surface border-surface-border"
+              }`}
+              aria-hidden="true"
+            />
 
-        <ExperienceItem
-          position={activeCompany.position}
-          companyName={activeCompany.companyName}
-          from={activeCompany.from}
-          to={activeCompany.to}
-          tasks={activeCompany.tasks}
-          website={activeCompany.website}
-        />
-      </section>
-    </div>
+            {/* Role Header */}
+            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-3">
+              <div>
+                <h3 id={`role-title-${idx}`} className="text-lg sm:text-xl font-bold text-text-primary">
+                  <span>{item.role}</span>{" "}
+                  <span className="text-accent">
+                    @{" "}
+                    <a
+                      href={item.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:underline focus:outline-none focus:ring-1 focus:ring-accent rounded"
+                    >
+                      {item.company}
+                    </a>
+                  </span>
+                </h3>
+              </div>
+              <span className="font-mono text-xs text-text-secondary whitespace-nowrap">
+                {item.period}
+              </span>
+            </div>
+
+            {/* 4-Part Structure Card: Scope -> Ownership -> Collaboration -> Outcome */}
+            <div className="p-5 sm:p-6 rounded-xl bg-surface border border-surface-border hover:border-accent/40 transition-colors">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-body mb-4">
+                <div>
+                  <span className="font-mono text-[11px] text-accent uppercase tracking-wider block mb-1">
+                    Scope of Work
+                  </span>
+                  <p className="text-text-secondary leading-relaxed">{item.scope}</p>
+                </div>
+                <div>
+                  <span className="font-mono text-[11px] text-accent-alt uppercase tracking-wider block mb-1">
+                    Technical Ownership
+                  </span>
+                  <p className="text-text-secondary leading-relaxed">{item.ownership}</p>
+                </div>
+                <div>
+                  <span className="font-mono text-[11px] text-text-secondary uppercase tracking-wider block mb-1">
+                    Collaboration &amp; Mentorship
+                  </span>
+                  <p className="text-text-secondary leading-relaxed">{item.collaboration}</p>
+                </div>
+                <div>
+                  <span className="font-mono text-[11px] text-warning uppercase tracking-wider block mb-1">
+                    Verified Outcome
+                  </span>
+                  <p className="text-text-primary font-medium leading-relaxed">{item.outcome}</p>
+                </div>
+              </div>
+
+              {/* Specific Technical Deliverables */}
+              {item.highlights && item.highlights.length > 0 && (
+                <div className="pt-3 border-t border-surface-border">
+                  <span className="font-mono text-[11px] text-text-secondary uppercase tracking-wider block mb-2">
+                    Key Deliverables:
+                  </span>
+                  <ul className="space-y-1.5 text-xs text-text-secondary font-body">
+                    {item.highlights.map((h, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-accent font-mono">▹</span>
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
-
-const CompaniesBar = ({ activeIndex, setActiveIndex }) => {
-  const [barPosition, setBarPosition] = React.useState(-2);
-  const [barAbovePosition, setBarAbovePosition] = React.useState(0);
-
-  return (
-    <div
-      id="WhereIhaveWorkedSection"
-      className="flex flex-col md:flex-row w-screen lg:w-auto 
-      overflow-auto scrollbar-hide md:overflow-hidden pb-4 md:pb-0 
-      justify-start sm:justify-center items-start sm:items-center"
-    >
-      {/* Vertical bar */}
-      <div className="hidden md:block bg-gray-500 relative h-0.5 w-34 md:h-[140px] translate-y-1 md:w-0.5 rounded md:order-1 order-2">
-        <motion.div
-          animate={{ y: barPosition }}
-          className="absolute w-10 h-0.5 md:w-0.5 md:h-12 rounded bg-AAsecondary"
-        ></motion.div>
-      </div>
-
-      {/* Company buttons */}
-      <div className="flex flex-col md:order-2 order-1 space-y-1 pl-8 md:pl-0">
-        <div className="flex flex-row md:flex-col">
-          {portfolioConfig.experience.map((v, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setActiveIndex(i);
-                setBarPosition(v.barPosition);
-                setBarAbovePosition(v.barAbovePosition);
-              }}
-              className={`flex-none sm:text-sm text-xs text-center md:text-left hover:text-AAsecondary
-                hover:bg-ResumeButtonHover rounded font-mono  
-                py-3 md:pl-6 md:px-4 md:w-44 w-32 duration-500
-                ${
-                  activeIndex === i
-                    ? "bg-ResumeButtonHover text-AAsecondary"
-                    : "text-gray-500"
-                }`}
-            >
-              {v.companyName}
-            </button>
-          ))}
-        </div>
-
-        {/* Mobile horizontal bar */}
-        <div className="block md:hidden h-0.5 rounded bg-gray-500">
-          <motion.div
-            animate={{ x:'50%' }}
-            className="w-[128px] h-0.5 rounded bg-AAsecondary"
-          ></motion.div>
-        </div>
-      </div>
-    </div>
-  );
-};

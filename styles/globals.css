@@ -1,9 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&display=swap");
-
-
-@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+/* Claude design system fonts — Cormorant Garamond (Copernicus substitute) + Inter + JetBrains Mono */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,26 +8,42 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #faf9f5;
+    color: #141413;
+  }
+
+  body {
+    background-color: #faf9f5;
+    color: #141413;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  ::selection {
+    background-color: #cc785c;
+    color: #ffffff;
   }
 }
+
 @layer utilities {
   body::-webkit-scrollbar {
-    width: 0.4em;
-    background-color: #0b192f;
+    width: 0.35em;
+    background-color: #faf9f5;
   }
 
   body::-webkit-scrollbar-thumb {
-    background-color: #4c5474;
-    scrollbar-gutter: stable;
-    border-radius: 40px;
+    background-color: #e6dfd8;
+    border-radius: 9999px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #e8e0d2;
   }
 }
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -41,4 +53,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
