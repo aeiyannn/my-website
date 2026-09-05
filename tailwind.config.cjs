@@ -15,7 +15,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        // Display serif — Claude design system (Cormorant Garamond = open-source Copernicus substitute)
+        // Display serif: Claude design system (Cormorant Garamond = open-source Copernicus substitute)
         Header: ["Cormorant Garamond", "Tiempos Headline", "Georgia", "serif"],
         display: ["Cormorant Garamond", "Tiempos Headline", "Georgia", "serif"],
         // Humanist sans for body

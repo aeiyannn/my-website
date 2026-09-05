@@ -60,7 +60,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
   return (
     <>
       <Head>
-        <title>{`${study.title} — Case Study | Aeiyan Khan`}</title>
+        <title>{`${study.title} | Case Study | Aeiyan Khan`}</title>
         <meta name="description" content={study.outcome} />
         <link rel="canonical" href={`https://aeiyankhan.me/work/${study.slug}`} />
       </Head>

@@ -111,7 +111,7 @@ export default function AboutMe() {
             <div className="relative rounded-xl overflow-hidden border border-hairline bg-surface-card aspect-square">
               <Img
                 src="/img/mypic.png"
-                alt="Aeiyan Khan — Full-Stack Engineer & Project Manager"
+                alt="Aeiyan Khan | Full-Stack Engineer & Project Manager"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
               />
             </div>

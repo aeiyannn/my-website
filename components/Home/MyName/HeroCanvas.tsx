@@ -6,7 +6,7 @@ export default function HeroCanvas() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.innerWidth < 768) return; // skip mobile — save perf
+    if (window.innerWidth < 768) return; // skip mobile: save perf
     if (!mountRef.current) return;
 
     const el = mountRef.current;
@@ -22,7 +22,7 @@ export default function HeroCanvas() {
     try {
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     } catch {
-      return; // WebGL unavailable — skip silently
+      return; // WebGL unavailable: skip silently
     }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(W, H);
@@ -56,7 +56,7 @@ export default function HeroCanvas() {
       )
     );
 
-    // Hairline edges between nearby nodes — single LineSegments draw call
+    // Hairline edges between nearby nodes: single LineSegments draw call
     const maxDist = 4;
     const edgeVerts: number[] = [];
     for (let i = 0; i < N; i++) {
@@ -75,7 +75,7 @@ export default function HeroCanvas() {
       )
     );
 
-    // Gentle mouse parallax — rotates toward cursor
+    // Gentle mouse parallax: rotates toward cursor
     let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
     const onMouse = (e: MouseEvent) => {
       targetX = (e.clientX / window.innerWidth - 0.5) * 0.6;
@@ -83,7 +83,7 @@ export default function HeroCanvas() {
     };
     window.addEventListener("mousemove", onMouse);
 
-    // Render loop — slow base spin + mouse influence
+    // Render loop: slow base spin + mouse influence
     let id: number;
     const tick = () => {
       id = requestAnimationFrame(tick);

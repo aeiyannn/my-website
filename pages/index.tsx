@@ -18,7 +18,7 @@ export default function Home() {
   const handleLoadDone = useCallback(() => setFinishedLoading(true), []);
 
   const meta = {
-    title: "Aeiyan Khan — Technical Project Manager & Systems Architect",
+    title: "Aeiyan Khan | Technical Project Manager & Systems Architect",
     description:
       "Technical Project Manager and Systems Architect based in Hyderabad, Pakistan. Internally promoted at Samarix from Full-Stack Developer after leading architecture decisions and client delivery across live products.",
     image: "/titofCercle.png",

@@ -34,12 +34,12 @@ const isCategoryMatch = (project: ProjectEvidence, category: string): boolean =>
   if (target === "backend/api") {
     const be = (project.stackGroups.backend || "").toLowerCase();
     const sig = (project.architectureSignal || "").toLowerCase();
-    return be.includes("node") || be.includes("nest") || be.includes("api") || sig.includes("node") || sig.includes("api");
+    return be.includes("node") || be.includes("nest") || be.includes("koa") || be.includes("express") || be.includes("api") || sig.includes("node") || sig.includes("koa") || sig.includes("express") || sig.includes("api");
   }
 
   if (target === "architecture") {
     const sig = (project.architectureSignal || "").toLowerCase();
-    return sig.includes("kafka") || sig.includes("redis") || sig.includes("system") || sig.includes("architecture");
+    return sig.includes("kafka") || sig.includes("redis") || sig.includes("socket") || sig.includes("pubnub") || sig.includes("system") || sig.includes("architecture") || sig.includes("baas");
   }
 
   return false;

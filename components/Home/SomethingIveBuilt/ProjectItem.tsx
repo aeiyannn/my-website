@@ -47,7 +47,7 @@ export default function ProjectItem({
         <div className="relative rounded-lg overflow-hidden border border-surface-border aspect-video bg-background/80 group">
           <Img
             src={project.image}
-            alt={`${project.title} — ${project.subtitle}`}
+            alt={`${project.title}: ${project.subtitle}`}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           {project.liveUrl && (

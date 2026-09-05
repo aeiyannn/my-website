@@ -12,13 +12,13 @@ const recommendations = [
     name: "Aftab Saraz",
     role: "CEO · Zetsol Technologies",
     avatar: "A",
-    text: "Aeiyan stood out from the start — technically strong, fast to learn, and professional in how he handled client-facing work. We recognised him as Employee of the Month for a reason. He'd be an asset to any team.",
+    text: "Aeiyan stood out from the start, technically strong, fast to learn, and professional in how he handled client-facing work. We recognised him as Employee of the Month for a reason. He'd be an asset to any team.",
   },
   {
     name: "Abdul Rahman",
     role: "CEO · Syncrobite Solutions",
     avatar: "A",
-    text: "Working with Aeiyan was straightforward in the best way — he understood requirements quickly, asked the right questions, and delivered on time. Reliable, skilled, and easy to communicate with.",
+    text: "Working with Aeiyan was straightforward in the best way: he understood requirements quickly, asked the right questions, and delivered on time. Reliable, skilled, and easy to communicate with.",
   },
   {
     name: "Junaid Rajput",

@@ -48,7 +48,7 @@ export default function MyName({ finishedLoading = true }: { finishedLoading?: b
           </span>
         </div>
 
-        {/* Primary H1 — Cormorant Garamond display serif */}
+        {/* Primary H1: Cormorant Garamond display serif */}
         <h1 className="hero-anim font-Header font-normal text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-ink tracking-tight leading-[1.05]"
             style={{ letterSpacing: "-1.5px" }}>
           {headline}

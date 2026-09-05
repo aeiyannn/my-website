@@ -25,7 +25,7 @@ export default function GetInTouch() {
       <div className="max-w-2xl mt-4">
         {/* Headline */}
         <h3 className="font-Header font-normal text-3xl sm:text-4xl text-ink tracking-tight leading-tight" style={{ letterSpacing: "-0.5px" }}>
-          Open to new opportunities — full-time roles, freelance projects, or just a good conversation.
+          Open to new opportunities: full-time roles, freelance projects, or just a good conversation.
         </h3>
         <p className="font-body text-muted text-sm sm:text-base mt-4 leading-relaxed">
           The quickest way to reach me is email. I typically respond within a day.
@@ -42,7 +42,7 @@ export default function GetInTouch() {
         {/* Two-card options */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
           <a
-            href="mailto:aeiyankhan2@gmail.com?subject=Job%20Opportunity%20%E2%80%94%20Aeiyan%20Khan"
+            href="mailto:aeiyankhan2@gmail.com?subject=Job%20Opportunity%20-%20Aeiyan%20Khan"
             className="p-6 rounded-xl bg-surface-card border border-hairline hover:border-accent/50 transition-all group flex flex-col justify-between"
           >
             <div>
@@ -53,13 +53,13 @@ export default function GetInTouch() {
                 Hiring or building a team? →
               </h4>
               <p className="text-xs text-muted font-body mt-2 leading-relaxed">
-                I&apos;m open to full-time roles — engineering, team lead, or project management positions.
+                I&apos;m open to full-time roles in engineering, team lead, or project management positions.
               </p>
             </div>
           </a>
 
           <a
-            href="mailto:aeiyankhan2@gmail.com?subject=Project%20Enquiry%20%E2%80%94%20Aeiyan%20Khan"
+            href="mailto:aeiyankhan2@gmail.com?subject=Project%20Enquiry%20-%20Aeiyan%20Khan"
             className="p-6 rounded-xl bg-surface-card border border-hairline hover:border-accent/50 transition-all group flex flex-col justify-between"
           >
             <div>
@@ -70,7 +70,7 @@ export default function GetInTouch() {
                 Have a project in mind? →
               </h4>
               <p className="text-xs text-muted font-body mt-2 leading-relaxed">
-                I take on select freelance work — web apps, dashboards, APIs, and full-stack builds.
+                I take on select freelance work: web apps, dashboards, APIs, and full-stack builds.
               </p>
             </div>
           </a>
