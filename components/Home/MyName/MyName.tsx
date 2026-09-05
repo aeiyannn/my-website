@@ -115,7 +115,7 @@ export default function MyName({ finishedLoading = true }: { finishedLoading?: b
 
         {/* Proof Strip */}
         {verifiedStats && verifiedStats.length > 0 && (
-          <div className="hero-anim grid grid-cols-1 sm:grid-cols-3 gap-3 mt-12 pt-8 border-t border-hairline">
+          <div className="hero-anim grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 pt-8 border-t border-hairline">
             {verifiedStats.map((stat) => (
               <div
                 key={stat.label}
