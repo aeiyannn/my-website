@@ -60,7 +60,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
   return (
     <>
       <Head>
-        <title>{`${study.title} — Technical Architecture Case Study | Aeiyan Khan`}</title>
+        <title>{`${study.title} — Case Study | Aeiyan Khan`}</title>
         <meta name="description" content={study.outcome} />
         <link rel="canonical" href={`https://aeiyankhan.me/work/${study.slug}`} />
       </Head>
@@ -97,7 +97,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
               href="mailto:aeiyankhan2@gmail.com"
               className="font-mono text-xs text-background bg-accent px-3 py-1 rounded font-medium"
             >
-              Discuss System
+              Discuss Project
             </a>
           </div>
         </header>
@@ -107,11 +107,11 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           <div className="mb-10">
             <div className="flex flex-wrap items-center gap-2 mb-3">
               <span className="font-mono text-xs text-accent uppercase tracking-wider">
-                System Architecture Case Study
+                Case Study
               </span>
               {study.isProprietary && (
                 <span className="font-mono text-[11px] text-warning bg-warning/10 border border-warning/30 px-2 py-0.5 rounded">
-                  Proprietary — Implementation Details Redacted
+                  Proprietary details are hidden
                 </span>
               )}
             </div>
@@ -156,7 +156,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
                 <p className="text-text-secondary mt-0.5">{study.ownership}</p>
               </div>
               <div>
-                <span className="font-mono text-xs text-text-secondary uppercase tracking-wider block">Stack Groups:</span>
+                <span className="font-mono text-xs text-text-secondary uppercase tracking-wider block">Tech Stack:</span>
                 <p className="font-mono text-xs text-text-primary mt-0.5">{study.stackSummary}</p>
               </div>
             </div>
@@ -166,7 +166,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
               <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 01</span>
-              <h2 className="text-2xl font-bold text-text-primary">Problem, Users &amp; Constraints</h2>
+              <h2 className="text-2xl font-bold text-text-primary">Project Overview</h2>
             </div>
 
             <div className="space-y-4 font-body text-sm sm:text-base text-text-secondary leading-relaxed">
@@ -174,7 +174,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
               <p><strong className="text-text-primary">Target Users:</strong> {study.problem.users}</p>
 
               <div>
-                <strong className="text-text-primary block mb-2">Key System Constraints:</strong>
+                <strong className="text-text-primary block mb-2">Key Constraints:</strong>
                 <ul className="space-y-2 text-sm pl-4 border-l border-surface-border">
                   {study.problem.constraints.map((c, i) => (
                     <li key={i} className="flex items-start gap-2">
@@ -196,7 +196,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
               <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 02</span>
-              <h2 className="text-2xl font-bold text-text-primary">System Context View</h2>
+              <h2 className="text-2xl font-bold text-text-primary">Product Flow</h2>
             </div>
 
             <div className="p-6 rounded-xl bg-surface border border-surface-border">
@@ -217,7 +217,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
               <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 03</span>
-              <h2 className="text-2xl font-bold text-text-primary">Container &amp; Runtime Layers</h2>
+              <h2 className="text-2xl font-bold text-text-primary">Tech Stack and Why It Was Used</h2>
             </div>
 
             <div className="space-y-3">
@@ -242,7 +242,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
               <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 04</span>
-              <h2 className="text-2xl font-bold text-text-primary">Critical Flow Walkthrough</h2>
+              <h2 className="text-2xl font-bold text-text-primary">User Journey</h2>
             </div>
 
             <div className="p-6 rounded-xl bg-surface border border-surface-border space-y-4">
@@ -275,7 +275,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
               <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 05</span>
-              <h2 className="text-2xl font-bold text-text-primary">Decisions &amp; Trade-Offs</h2>
+              <h2 className="text-2xl font-bold text-text-primary">Key Decisions</h2>
             </div>
 
             <div className="overflow-x-auto rounded-xl border border-surface-border bg-surface">
@@ -308,7 +308,7 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           <section className="space-y-6 mb-16">
             <div className="border-b border-surface-border pb-2">
               <span className="font-mono text-xs text-accent uppercase tracking-widest block">Section 06</span>
-              <h2 className="text-2xl font-bold text-text-primary">Validation &amp; Retrospective</h2>
+              <h2 className="text-2xl font-bold text-text-primary">What We Delivered</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -345,10 +345,10 @@ export default function CaseStudyPage({ study }: { study: CaseStudyData }) {
           {/* 8. End-of-Study Contact CTA */}
           <section className="p-8 rounded-xl bg-surface border border-accent/40 text-center space-y-4">
             <h2 className="text-xl sm:text-2xl font-bold text-text-primary">
-              Interested in how this architecture translates to your product?
+              Interested in how this project approach can help your product?
             </h2>
             <p className="text-xs sm:text-sm text-text-secondary font-body max-w-lg mx-auto">
-              I can walk through code samples, schema diagrams, and production trade-offs in detail.
+              I can walk you through the stack choices, delivery process, and results.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <a

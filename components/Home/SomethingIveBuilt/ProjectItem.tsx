@@ -151,7 +151,7 @@ export default function ProjectItem({
           {/* Architecture Signal (Without Hover) */}
           <div className="mt-3 p-2.5 rounded bg-background/50 border border-surface-border/80">
             <span className="font-mono text-[11px] text-accent-alt uppercase tracking-wider block">
-              Architecture Signal:
+              Tech Stack:
             </span>
             <p className="font-mono text-xs text-text-primary mt-1">
               {project.architectureSignal}
@@ -165,7 +165,7 @@ export default function ProjectItem({
             {project.caseStudyUrl && (
               <Link href={project.caseStudyUrl}>
                 <span className="inline-flex items-center font-mono text-xs text-accent hover:text-white border border-accent/70 hover:border-accent hover:bg-accent px-4 py-2 rounded transition-colors cursor-pointer">
-                  Read architecture case study →
+                  Read case study →
                 </span>
               </Link>
             )}
