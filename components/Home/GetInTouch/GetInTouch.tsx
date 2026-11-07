@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import ArrowIcon from "../../Icons/ArrowIcon";
 import GithubIcon from "../../Icons/GithubIcon";
 import LinkedinIcon from "../../Icons/LinkedinIcon";
@@ -32,17 +33,17 @@ export default function GetInTouch() {
         </p>
 
         {/* Primary CTA */}
-        <a
-          href="mailto:aeiyankhan2@gmail.com"
+        <Link
+          href="/contact"
           className="inline-block mt-8 font-mono text-sm text-white bg-accent hover:bg-coral-active px-8 py-4 rounded-lg transition-colors font-medium"
         >
-          aeiyankhan2@gmail.com →
-        </a>
+          Start a conversation →
+        </Link>
 
         {/* Two-card options */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-          <a
-            href="mailto:aeiyankhan2@gmail.com?subject=Job%20Opportunity%20-%20Aeiyan%20Khan"
+          <Link
+            href="/contact?type=hiring"
             className="p-6 rounded-xl bg-surface-card border border-hairline hover:border-accent/50 transition-all group flex flex-col justify-between"
           >
             <div>
@@ -56,10 +57,10 @@ export default function GetInTouch() {
                 I&apos;m open to full-time roles in engineering, team lead, or project management positions.
               </p>
             </div>
-          </a>
+          </Link>
 
-          <a
-            href="mailto:aeiyankhan2@gmail.com?subject=Project%20Enquiry%20-%20Aeiyan%20Khan"
+          <Link
+            href="/contact?type=project"
             className="p-6 rounded-xl bg-surface-card border border-hairline hover:border-accent/50 transition-all group flex flex-col justify-between"
           >
             <div>
@@ -73,7 +74,7 @@ export default function GetInTouch() {
                 I take on select freelance work: web apps, dashboards, APIs, and full-stack builds.
               </p>
             </div>
-          </a>
+          </Link>
         </div>
 
         {/* Footer links */}

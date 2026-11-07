@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 import { Link as ReactScrollLink } from "react-scroll";
 import gsap from "gsap";
 import { portfolioContent } from "../../../configuration/content";
@@ -74,12 +75,12 @@ export default function MyName({ finishedLoading = true }: { finishedLoading?: b
             </button>
           </ReactScrollLink>
 
-          <a
-            href="mailto:aeiyankhan2@gmail.com"
+          <Link
+            href="/contact"
             className="font-mono text-xs sm:text-sm text-ink hover:text-accent border border-hairline hover:border-accent/60 bg-surface-card px-6 py-3 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
           >
             Get in Touch
-          </a>
+          </Link>
 
           <a
             href="/resume.pdf"
