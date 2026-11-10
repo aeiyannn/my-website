@@ -105,15 +105,15 @@ export interface ToolkitCategory {
 
 export const portfolioContent = {
   positioning: {
-    roleTitle: "Technical Project Manager / Systems Architect",
-    headline: "I run product delivery and stay close to the architecture.",
+    roleTitle: "Project Manager · Senior Developer",
+    headline: "I lead product delivery and the teams that ship it.",
     supportingLine:
-      "Based in Hyderabad, Pakistan. I was promoted from Full-Stack Developer to Project Manager at Samarix after leading backend architecture decisions, unblocking delivery risks, and keeping client launches on schedule. I now manage sprint execution across live products while continuing to review system-level technical trade-offs.",
+      "Based in Hyderabad, Pakistan. I run sprint execution across four live products at Samarix — scoping work with clients, unblocking engineers, and reviewing the architecture calls that keep launches on schedule. I still write and review code where it matters.",
     verifiedStats: [
-      { label: "Experience", value: "2+ Years", detail: "Professional delivery since Dec 2023" },
-      { label: "Current Scope", value: "4 Products", detail: "Parallel delivery across Samarix client pipelines" },
-      { label: "Event Latency", value: "Sub-200ms", detail: "SentinelKids real-time event propagation" },
-      { label: "Release Stability", value: "0 Rollbacks", detail: "Recent production release cycles" },
+      { label: "Products In Flight", value: "4", detail: "Live client pipelines under active delivery" },
+      { label: "On-Time Launches", value: "100%", detail: "Recent release cycles shipped without slippage" },
+      { label: "Release Stability", value: "0 Rollbacks", detail: "Zero production rollbacks in recent cycles" },
+      { label: "Team Interface", value: "Client → Dev", detail: "Single point across scoping, build and handoff" },
     ] as VerifiedStat[],
   },
 

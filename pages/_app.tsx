@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import AppContext from "../components/AppContextFolder/AppContext";
+import { fontClass } from "../lib/fonts";
 import { useRef, useState, useEffect } from "react";
 // import NEXT_PUBLIC_GA_TRACKING_ID form .env
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
@@ -76,9 +77,11 @@ function MyApp({ Component, pageProps }) {
   });
   return (
     <AppContext.Provider value={{ sharedState, setSharedState }}>
-      <SpeedInsights />
-      <Component {...pageProps} />
-      <Analytics />
+      <div className={fontClass} style={{ contain: "layout" }}>
+        <SpeedInsights />
+        <Component {...pageProps} />
+        <Analytics />
+      </div>
     </AppContext.Provider>
   );
 }

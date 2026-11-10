@@ -5,7 +5,6 @@ import gsap from "gsap";
 import { portfolioContent } from "../../../configuration/content";
 import GithubIcon from "../../Icons/GithubIcon";
 import LinkedinIcon from "../../Icons/LinkedinIcon";
-import HeroCanvas from "./HeroCanvas";
 
 export default function MyName({ finishedLoading = true }: { finishedLoading?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,9 +36,6 @@ export default function MyName({ finishedLoading = true }: { finishedLoading?: b
       aria-label="Introduction"
       className="relative min-h-[92vh] flex flex-col justify-center px-6 sm:px-12 md:px-20 lg:px-28 xl:px-44 2xl:px-72 pt-28 pb-16 overflow-hidden bg-background"
     >
-      {/* Three.js node network background */}
-      <HeroCanvas />
-
       <div className="relative z-10 max-w-3xl">
         {/* Role Subheading */}
         <div className="hero-anim flex items-center space-x-3 mb-4">

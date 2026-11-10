@@ -1,0 +1,212 @@
+/* ------------------------------------------------------------------
+ * Design tokens — single source of truth.
+ * Reference from Tailwind arbitrary classes (`bg-[var(--bg)]`),
+ * Motion (`transition={{ ease: 'var(--ease-out-expo)' }}` via lib/motion),
+ * or GSAP (parsed via gsap.parseEase in lib/motion).
+ * ------------------------------------------------------------------ */
+
+:root {
+  /* Neutral — Swiss: white / near-black, warm beige on the extended end */
+  --n-50: #ffffff;         /* canvas */
+  --n-100: #f5f1e8;        /* beige surface */
+  --n-200: #e8e3d4;        /* beige border */
+  --n-300: #cfc8b4;
+  --n-400: #a19d93;
+  --n-500: #808080;        /* spec grey */
+  --n-600: #4a4a46;
+  --n-700: #2a2824;
+  --n-800: #141210;
+  --n-900: #0a0908;        /* off-black — spec forbids pure #000 */
+
+  /* Decorative — taupe/brown. Fails AAA on white, use for accents only. */
+  --a-50: #f1e5d4;
+  --a-100: #e3cfab;
+  --a-200: #cfae82;
+  --a-300: #b38b6d;        /* spec taupe — decorative use only */
+  --a-400: #8b6a47;        /* text-safe brown — AA on white */
+  --a-500: #6b5134;
+  --a-600: #4d3a24;
+  --a-700: #2e2217;
+
+  /* Semantic — light theme (Swiss: ink is primary action, brown is decorative) */
+  --bg: var(--n-50);
+  --surface: var(--n-100);         /* beige */
+  --elev: #ffffff;
+  --text: var(--n-900);             /* off-black, not #000 */
+  --muted: var(--n-500);
+  --border: var(--n-200);
+
+  --primary: var(--n-900);          /* black pill CTA */
+  --primary-fg: #ffffff;
+  --primary-hover: var(--n-800);
+
+  --accent: var(--a-400);           /* brown text-safe */
+  --accent-decor: var(--a-300);     /* taupe for swatches, not text */
+  --accent-strong: var(--a-500);
+  --accent-fg: #ffffff;
+  --focus: var(--n-900);
+  --danger: #c64545;
+  --ok: #4a8f72;
+}
+
+/* Dark — designed, not inverted. Warm charcoals, softer accent for AA on dark bg. */
+.theme-dark,
+:root[data-theme="dark"] {
+  --bg: #0e0d0b;
+  --surface: #17161399;
+  --elev: #1c1b18;
+  --text: #f2efe7;
+  --muted: #8e8b82;
+  --border: #2a2824;
+  --accent: var(--a-300);        /* lighter on dark */
+  --accent-strong: var(--a-200);
+  --accent-fg: #0e0d0b;
+  --focus: var(--a-200);
+}
+
+/* ------------------------- Typography ------------------------- */
+:root {
+  /* Swiss/minimalism: one geometric sans for display + body, mono for eyebrows. */
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Display weights — bold hero numerals are the Swiss signature */
+  --fw-display: 900;
+  --fw-h1: 800;
+  --fw-h2: 700;
+  --fw-h3: 600;
+  --fw-body: 400;
+  --fw-eyebrow: 500;
+
+  /* Fluid type — clamp(min, preferred, max) — ~360→1440 viewport sweep */
+  --fs-display: clamp(2.75rem, 1.6rem + 5.6vw, 6.25rem);
+  --fs-h1: clamp(2rem, 1.2rem + 4vw, 4rem);
+  --fs-h2: clamp(1.5rem, 1rem + 2.4vw, 2.75rem);
+  --fs-h3: clamp(1.25rem, 0.95rem + 1.4vw, 1.875rem);
+  --fs-h4: clamp(1.125rem, 0.95rem + 0.85vw, 1.375rem);
+  --fs-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
+  --fs-small: 0.875rem;
+  --fs-caption: 0.75rem;
+
+  --lh-display: 1.02;
+  --lh-h1: 1.08;
+  --lh-h2: 1.15;
+  --lh-h3: 1.25;
+  --lh-h4: 1.3;
+  --lh-body: 1.6;
+  --lh-small: 1.5;
+
+  --ls-display: -0.045em;  /* Swiss hug on 900 weight */
+  --ls-h1: -0.035em;
+  --ls-h2: -0.025em;
+  --ls-h3: -0.015em;
+  --ls-body: 0;
+  --ls-caption: 0.12em;    /* wide-tracked uppercase eyebrows */
+}
+
+/* ------------------------- Spacing ------------------------- */
+/* 4px base — s-1 = 4px … s-24 = 96px */
+:root {
+  --s-0: 0;
+  --s-0_5: 2px;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+
+  /* Fluid section rhythm */
+  --section-sm: clamp(2.5rem, 2rem + 2vw, 4rem);
+  --section-md: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  --section-lg: clamp(5rem, 3rem + 7vw, 9rem);
+  --section-xl: clamp(7rem, 4rem + 10vw, 13rem);
+
+  --container: min(100% - var(--s-8), 1200px);
+  --container-wide: min(100% - var(--s-8), 1440px);
+}
+
+/* ------------------------- Radii / borders / elevation ------------------------- */
+:root {
+  /* Swiss: 0 radius default. Named steps per spec for inputs/menus. */
+  --r-0: 0px;
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+  --r-full: 999px;
+  --r-button: 0px;   /* spec: sharp primary */
+  --r-card: 0px;     /* spec: sharp cards */
+  --r-input: 4px;
+
+  --bw: 1px;
+
+  /* 3 elevation levels — subtle, warm */
+  --elev-1: 0 1px 0 rgba(20, 20, 19, 0.04);
+  --elev-2: 0 6px 16px -8px rgba(20, 20, 19, 0.10), 0 2px 4px -2px rgba(20, 20, 19, 0.06);
+  --elev-3: 0 20px 40px -14px rgba(20, 20, 19, 0.18), 0 8px 16px -8px rgba(20, 20, 19, 0.08);
+}
+
+.theme-dark,
+:root[data-theme="dark"] {
+  --elev-1: 0 1px 0 rgba(0, 0, 0, 0.5);
+  --elev-2: 0 6px 16px -8px rgba(0, 0, 0, 0.55), 0 2px 4px -2px rgba(0, 0, 0, 0.35);
+  --elev-3: 0 20px 40px -14px rgba(0, 0, 0, 0.7), 0 8px 16px -8px rgba(0, 0, 0, 0.45);
+}
+
+/* ------------------------- Motion ------------------------- */
+:root {
+  --dur-fast: 180ms;
+  --dur-hover: 200ms;
+  --dur-base: 320ms;
+  --dur-entry: 420ms;
+  --dur-slow: 600ms;
+  --dur-cinematic: 1200ms;
+
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-spring-soft: cubic-bezier(0.34, 1.26, 0.64, 1);   /* overshoot, gentle */
+  --ease-spring-tight: cubic-bezier(0.2, 1.6, 0.4, 1);     /* overshoot, snappy */
+}
+
+/* ------------------------- Breakpoints (reference only) -------------------------
+ * sm 640 · md 768 · lg 1024 · xl 1280 · 2xl 1536
+ * Mirror in tailwind.config → screens. 12-col grid uses var(--gutter).
+ * ------------------------------------------------------------ */
+:root {
+  --gutter: clamp(1rem, 1rem + 1vw, 2rem);
+  --grid-cols: 12;
+}
+
+/* Honor system colour scheme by default unless user forces a theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e0d0b;
+    --surface: #17161399;
+    --elev: #1c1b18;
+    --text: #f2efe7;
+    --muted: #8e8b82;
+    --border: #2a2824;
+    --accent: var(--a-300);
+    --accent-strong: var(--a-200);
+    --accent-fg: #0e0d0b;
+    --focus: var(--a-200);
+  }
+}
+
+/* Reduce motion: shrink durations to near-zero so one toggle disarms every animation. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0.01ms;
+    --dur-base: 0.01ms;
+    --dur-slow: 0.01ms;
+    --dur-cinematic: 0.01ms;
+  }
+}

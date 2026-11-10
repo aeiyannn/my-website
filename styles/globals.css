@@ -1,5 +1,6 @@
-/* Claude design system fonts: Cormorant Garamond (Copernicus substitute) + Inter + JetBrains Mono */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+/* Legacy font faces kept for existing components (Cormorant). next/font handles Inter+JetBrains. */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+@import "./tokens.css";
 
 @tailwind base;
 @tailwind components;
@@ -8,18 +9,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background-color: #faf9f5;
-    color: #141413;
+    background-color: #ffffff;
+    color: #141210;
   }
 
   body {
-    background-color: #faf9f5;
-    color: #141413;
+    background-color: #ffffff;
+    color: #141210;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   ::selection {
-    background-color: #cc785c;
+    background-color: #8b6a47;
     color: #ffffff;
   }
 }
@@ -27,16 +28,16 @@
 @layer utilities {
   body::-webkit-scrollbar {
     width: 0.35em;
-    background-color: #faf9f5;
+    background-color: #ffffff;
   }
 
   body::-webkit-scrollbar-thumb {
-    background-color: #e6dfd8;
+    background-color: #ebe5db;
     border-radius: 9999px;
   }
 
   body::-webkit-scrollbar-thumb:hover {
-    background-color: #e8e0d2;
+    background-color: #d6cdbe;
   }
 }
 
